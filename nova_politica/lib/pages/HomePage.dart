@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nova_politica/pages/AboutPage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -7,6 +8,8 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+
+
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -27,7 +30,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Center(
+      body: ElevatedButton(
+        child: Text('About'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => MyApp(),
+              ),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -36,5 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-  dasdas
+
+  
 }
