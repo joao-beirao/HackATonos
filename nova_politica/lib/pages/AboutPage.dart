@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:nova_politica/main.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyAboutPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyAboutPage extends StatelessWidget {
+  const MyAboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'About Us',
+      title: 'Sobre Nós',
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.red,
-          title: const Text('About Us'), ),
+          title: const Text('Sobre Nós'), 
+          ),
       )
     );
   }
