@@ -13,21 +13,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return MaterialApp(
+      title: 'Nova Politica',
+      home: Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
       body: ElevatedButton(
@@ -41,11 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+    )
     );
   }
 
