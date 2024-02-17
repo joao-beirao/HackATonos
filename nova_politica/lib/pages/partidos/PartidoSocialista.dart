@@ -8,9 +8,11 @@ class PS extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Banner Page'),
+        title: Text('PS'),
       ),
-      body: Column(
+      body:
+        SingleChildScrollView(
+          child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Banner Image
@@ -51,19 +53,47 @@ class PS extends StatelessWidget {
                   // First text
                   Text(
                     'Partido Socialista',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 40),
                   ),
                   // Second text
                   Text(
-                    'As raízes ideológicas do Partido Socialista e do seu Grupo Parlamentar na Assembleia da República estão indissoluvelmente ligadas ao ideal do socialismo democrático, desenvolvido em meados da segunda metade do século XIX. O Grupo Parlamentar do Partido Socialista empenha-se na construção de uma sociedade livre, igual e solidária, aberta à diversidade, à iniciativa, à inovação e ao progresso.',
-                    style: TextStyle(fontSize: 18),
+                    'As Propostas do Partido Socialista:',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  Text(
+                    '   • Proposta 1;',
+                    style: TextStyle(fontSize:22),
+                  ),
+                  Text(
+                    '   • Proposta 2;',
+                    style: TextStyle(fontSize:22),
+                  ),
+                  Text(
+                    '   • Proposta 3;',
+                    style: TextStyle(fontSize:22),
+                  ),
+                  Text(
+                    '   • Proposta 4;',
+                    style: TextStyle(fontSize:22),
+                  ),
+                  Text(
+                    '   • Proposta 5;',
+                    style: TextStyle(fontSize:22),
+                  ),
+                  Text(
+                    '   • Proposta 6;',
+                    style: TextStyle(fontSize:22),
+                  ),
+                  Text(
+                    '   • Proposta 7;',
+                    style: TextStyle(fontSize:22),
                   ),
                 ],
               ),
             ],
           ),
         ],
-      ),
+      ),),
     );
   }
 
