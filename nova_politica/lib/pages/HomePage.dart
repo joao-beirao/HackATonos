@@ -154,8 +154,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-<<<<<<< Updated upstream
-=======
               Align(alignment: Alignment.topCenter, child: Image.network(
                   'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
               Center(child: Container(height:50, child: Align(alignment: Alignment.topCenter, child: GestureDetector(
@@ -188,7 +186,6 @@ class _MyHomePageState extends State<MyHomePage> {
               Center(child:News3(),),
               Container(height: 30,),
 
->>>>>>> Stashed changes
               BottomAppBar(
                   color: Colors.grey.withOpacity(0.1),
                   child: Row(
@@ -230,13 +227,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 
-<<<<<<< Updated upstream
-=======
 
   
 }
 
->>>>>>> Stashed changes
   void _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -244,8 +238,6 @@ class _MyHomePageState extends State<MyHomePage> {
       throw 'Could not launch $url';
     }
   }
-<<<<<<< Updated upstream
-=======
 class News1 extends StatelessWidget {  
   @override
   Widget build(BuildContext context) {
@@ -274,7 +266,6 @@ class News1 extends StatelessWidget {
       ),
     );
   }
->>>>>>> Stashed changes
 }
 
 class News2 extends StatelessWidget {  
