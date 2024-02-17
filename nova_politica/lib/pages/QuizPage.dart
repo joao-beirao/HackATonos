@@ -323,7 +323,7 @@ class _MyQuizAppState extends State<MyQuizApp> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const MyApp(),
+                              builder: (_) =>  MyApp(),
                             ),
                           );
                         },
