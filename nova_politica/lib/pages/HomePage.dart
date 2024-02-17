@@ -112,13 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   alignment: Alignment.center,
                   child: Image.network(
                       'https://media-manager.noticiasaominuto.com/1920/naom_5cebeda3ee509.jpg')),
-              Center(
+              Container( child: Center(
                 child: Text(
                   'Seja bem vindo ao Nova Política, uma maneira inovadora de estar a par da política portuguesa!',
-                  style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 30)),
+                  style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
                   textAlign: TextAlign.center,
                 ),
-              ),
+              ), margin: EdgeInsets.all(20.0)),
               Align(alignment: Alignment.topCenter, child: Image.network(
                   'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
               BottomAppBar(
