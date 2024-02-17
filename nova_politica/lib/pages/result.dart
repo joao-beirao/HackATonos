@@ -2,33 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Result extends StatelessWidget {
-  final int resultScore;
+  final int resultScoreX;
+  final int resultScoreY;
   final Function resetHandler;
 
-  const Result(this.resultScore, this.resetHandler, {Key? key})
+  const Result(this.resultScoreX, this.resultScoreY, this.resetHandler, {Key? key})
       : super(key: key);
 
   // Remark Logic
   String get resultPhrase {
     String resultText;
-    if (resultScore >= 90) {
+    if (resultScoreX >= 90) {
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o Chega';
-    } else if (resultScore >= 70 && resultScore < 90) {
+    } else if (resultScoreX >= 70 && resultScoreX < 90) {
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o CDS-PP';
-    } else if (resultScore >= 45 && resultScore < 70) {
+    } else if (resultScoreX >= 45 && resultScoreX < 70) {
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o IL';
-    } else if (resultScore >= 10 && resultScore < 45) {
+    } else if (resultScoreX >= 10 && resultScoreX < 45) {
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o PSD';
-    } else if (resultScore >= -30 && resultScore < 10){
+    } else if (resultScoreX >= -30 && resultScoreX < 10){
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o PS';
     }
-    else if (resultScore >= -55 && resultScore < -30){
+    else if (resultScoreX >= -55 && resultScoreX < -30){
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o Livre';
     }
-    else if (resultScore >= -75 && resultScore < -55){
+    else if (resultScoreX >= -75 && resultScoreX < -55){
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o BE';
     }
-    else if (resultScore >= -90 && resultScore < -75){
+    else if (resultScoreX >= -90 && resultScoreX < -75){
       resultText = 'O Partido do qual as suas respostas mais se aproximam é o CDU';
     }
     else{
@@ -39,7 +40,8 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return ListView(
+      children: [Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -49,7 +51,10 @@ class Result extends StatelessWidget {
                        const TextStyle(fontSize: 42,fontWeight: FontWeight.bold,color: Colors.black,  decoration: TextDecoration.none)),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 40), 
+          const Text('Baseado neste gráfico:',style: (
+                       TextStyle(fontSize: 42,fontWeight: FontWeight.bold,color: Colors.black,  decoration: TextDecoration.none)),
+            textAlign: TextAlign.center,),
+          Image.network('https://cdn.discordapp.com/attachments/1207684391283982357/1208362416929509386/qFAAQgAAEIQAACEIAABCBwmQTD3Jfz08F8VtmAAAAAElFTkSuQmCC.png?ex=65e30232&is=65d08d32&hm=16d9070231c367b6425a901e0fe69346efb045cea15c8d93d826d7b0eb24d1bd&'),
           TextButton(
             onPressed: () => resetHandler(),
             style: ButtonStyle(
@@ -66,6 +71,6 @@ class Result extends StatelessWidget {
           ),
         ],
       ),
-    );
+    )]);
   }
 }

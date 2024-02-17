@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'GuidePage.dart';
+import 'PoliticalPartiesPage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -93,6 +94,18 @@ class _MyHomePageState extends State<MyHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (_) => const MyQuizApp(),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.group_outlined),
+                        title: const Text('Partidos'),
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyPartiesApp(),
                             ),
                           );
                         },
