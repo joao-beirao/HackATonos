@@ -28,9 +28,12 @@ class MyGuide extends StatelessWidget {
                       style: GoogleFonts.lobster(
                           textStyle: const TextStyle(fontSize: 40)))),
             ),
-            body: ListView(children: [
+            body: Center(child:Container(
+              width: 800,
+              child:ListView(children: [
               Container(
                 height: 100,
+                
                 margin: const EdgeInsets.fromLTRB(40.0, 5.0, 0.0, 0.0), child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -42,7 +45,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 100,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 5.0, 80.0, 0.0), child: RichText(
             text: TextSpan(
@@ -58,7 +61,7 @@ class MyGuide extends StatelessWidget {
               style: GoogleFonts.signikaNegative(textStyle: const TextStyle(fontSize: 25)),
             ),)),
             Container(
-            height: 100,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), child: RichText(
             text: TextSpan(
@@ -86,7 +89,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Um sistema político e econômico que busca a propriedade coletiva ou estatal dos meios de produção e distribuição de recursos. O socialismo visa a igualdade econômica e social, muitas vezes por meio de políticas de redistribuição de riqueza e programas sociais abrangentes. Pode variar de formas mais moderadas, como o socialismo democrático, a formas mais radicais, como o socialismo revolucionário.', 
@@ -105,7 +108,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia que busca a eliminação das classes sociais e do Estado, visando uma sociedade sem propriedade privada, onde os meios de produção são de propriedade comum e a distribuição de bens é baseada nas necessidades de cada indivíduo. Embora tenha sido implementado em várias nações ao longo da história, a aplicação prática do comunismo muitas vezes envolveu regimes autoritários e centralizados.', 
@@ -124,7 +127,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Um sistema econômico baseado na propriedade privada dos meios de produção e na alocação de recursos pelo mercado, com pouca intervenção do governo. No capitalismo, a busca pelo lucro e a competição são os principais motores da economia. Pode variar de formas mais reguladas, como o capitalismo de bem-estar social, a formas mais livres, como o capitalismo laissez-faire.', 
@@ -143,7 +146,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Um sistema de governo no qual o poder político é exercido pelo povo, seja diretamente ou por meio de representantes eleitos. A democracia geralmente envolve eleições livres e justas, separação de poderes, estado de direito e proteção dos direitos individuais e das liberdades civis.', 
@@ -162,7 +165,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma forma extrema de governo em que o Estado exerce controle total sobre a vida pública e privada dos cidadãos, geralmente restringindo severamente as liberdades individuais e políticas, e suprimindo qualquer forma de oposição. Exemplos históricos incluem regimes como o nazismo na Alemanha e o stalinismo na União Soviética.', 
@@ -181,7 +184,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 150,
+            height: 100,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia que enfatiza a liberdade individual, a igualdade de oportunidades e a proteção dos direitos civis e políticos. Os liberais geralmente apoiam economias de mercado, direitos individuais, estado de direito e democracia representativa.', 
@@ -200,7 +203,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia que valoriza a tradição, a estabilidade social e a autoridade institucional. Os conservadores tendem a defender valores tradicionais, como a família, a religião e a ordem social hierárquica. No aspecto econômico, os conservadores geralmente apoiam políticas que promovem o livre mercado e reduzem a intervenção do governo na economia.', 
@@ -219,7 +222,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia política caracterizada por um autoritarismo extremo, nacionalismo radical, supressão de dissidência política e crença na supremacia de um estado forte liderado por um líder carismático. O fascismo geralmente promove valores de exclusividade étnica ou nacional, militarismo e centralização do poder estatal.', 
@@ -238,7 +241,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia política que busca a abolição do Estado e de outras instituições hierárquicas, defendendo a auto-organização da sociedade com base na cooperação voluntária e na descentralização do poder. Os anarquistas frequentemente defendem a propriedade comum dos meios de produção e uma sociedade baseada na solidariedade e na autonomia individual.', 
@@ -257,7 +260,7 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 250,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia que enfatiza a identidade nacional, a lealdade ao Estado-nação e a defesa dos interesses nacionais. O nacionalismo pode variar de formas moderadas, que buscam promover a coesão social e a autonomia nacional, a formas mais extremas, que promovem a exclusão de grupos étnicos ou religiosos considerados estrangeiros ou inferiores.', 
@@ -276,13 +279,18 @@ class MyGuide extends StatelessWidget {
               )
             ),
             Container(
-            height: 200,
+            height: 300,
             width: 200,
             margin: const EdgeInsets.fromLTRB(80.0, 0.0, 80.0, 0.0), 
             child: Text('Uma ideologia que promove a cooperação internacional, a integração econômica e política entre os países e a interdependência global. Os globalistas tendem a apoiar instituições internacionais, como a ONU e a UE, e políticas que visam resolver problemas globais, como mudanças climáticas, comércio internacional e direitos humanos.', 
             style: GoogleFonts.signikaNegative(textStyle: const TextStyle(fontSize: 25)),
             )),
-            BottomAppBar(
+
+            ]
+             )
+            )
+            ),
+            bottomNavigationBar: BottomAppBar(
                   color: Colors.grey.withOpacity(0.1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -317,9 +325,7 @@ class MyGuide extends StatelessWidget {
                         child: const Text('Contactos'),
                       )
                     ],
-                  ))
-            ]
-             )
+                  )),
               
             ));
   }
