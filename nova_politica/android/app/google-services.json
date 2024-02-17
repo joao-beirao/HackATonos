@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "285599457074",
+    "firebase_url": "https://nvpolitica-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "nvpolitica",
+    "storage_bucket": "nvpolitica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285599457074:android:4e54093c817a367eab812b",
+        "android_client_info": {
+          "package_name": "com.example.nova_politica"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6HcDnpbyRYygyt82RONL5tmt1L1SERzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

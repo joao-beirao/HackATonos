@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nova_politica/pages/PartidoSocialista.dart';
+import 'package:nova_politica/pages/partidos/PartidoSocialista.dart';
 
 class MyPartiesApp extends StatelessWidget {
   const MyPartiesApp({super.key});
