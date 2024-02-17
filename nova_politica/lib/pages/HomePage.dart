@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
               Center(
                 child: Container(
-                  height: 500,
+                  height: 100,
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: GestureDetector(
@@ -154,31 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Align(alignment: Alignment.topCenter, child: Image.network(
-                  'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
-              Center(child: Container(height:50, child: Align(alignment: Alignment.topCenter, child: GestureDetector(
-            onTap: () { // INSERIR LINK UP
-              _launchURL('https://www.example.com');
-            },
-            child: Text(
-              'Saber Mais',
-              style: TextStyle(
-                color: Colors.grey,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ),),),),
-          Center(child: Container(
-                height: 150,
-                width: 800,
-                child: Center( child:Text(
-                    'Principais Notícias',
-                    style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
-                    textAlign: TextAlign.center,
-                  ),
-                  ),
-                )
-              ),
+              
               Center(child:News1(),),
               Container(height: 30,),
               Center(child:News2(),),
@@ -249,13 +225,14 @@ class News1 extends StatelessWidget {
       height: 270,
       width: 680,
       decoration: const BoxDecoration(
-        color: Color.fromARGB(220, 35, 35, 35)
+        color: Color.fromARGB(255, 0, 12, 62)
       )
     ,
       child: Row(children:[
         Container(
+          padding: EdgeInsets.all(20),
           width: 200,
-          child:Text("Marcelo recebe Ireneu Barreto esta manhã em Belém", style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 219, 219, 219)),textAlign: TextAlign.center),
+          child:Text("Marcelo recebe Ireneu Barreto esta manhã em Belém", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
         ),
         Container(
           width: 480,
@@ -277,11 +254,11 @@ class News2 extends StatelessWidget {
             onTap: () { // INSERIR LINK UP
               _launchURL('https://cnnportugal.iol.pt/eleicoes-legislativas/debate/hipocrisia-lula-da-silva-ou-putin-andre-ventura-e-rui-tavares-num-debate-pouco-claro/20240216/65bd1e4ad34e65afa2fa5d50');
             },
-            child: Container( 
+      child: Container( 
       height: 270,
       width: 680,
       decoration: const BoxDecoration(
-        color: Color.fromARGB(220, 35, 35, 35)
+        color: Color.fromARGB(255, 0, 12, 62)
       )
     ,
       child: Row(children:[
@@ -291,7 +268,8 @@ class News2 extends StatelessWidget {
           child: Image.network("https://cdn.discordapp.com/attachments/1208282567002820609/1208282602495021067/1024.jpg?ex=65e2b7dd&is=65d042dd&hm=7dab45bb23375d511e157511f4d7cdd55945cf2a9d5cf52632fa8a0670665ad2&")),
         Container(
           width: 200,
-          child:Center(child:Text("Hipocrisia, Lula da Silva ou Putin.", style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 219, 219, 219)),textAlign: TextAlign.center)),
+          padding: EdgeInsets.all(20),
+          child:Center(child:Text("Hipocrisia, Lula da Silva ou Putin.", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center)),
         ),
         ])
       ),
@@ -310,13 +288,14 @@ class News3 extends StatelessWidget {
       height: 270,
       width: 680,
       decoration: const BoxDecoration(
-        color: Color.fromARGB(220, 35, 35, 35)
+        color: Color.fromARGB(255, 0, 12, 62)
       )
     ,
       child: Row(children:[
         Container(
+          padding: EdgeInsets.all(20),
           width: 200,
-          child:Text("Mariana Mortágua acusa PS de falhar na Saúde e Habitação.", style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 219, 219, 219)),textAlign: TextAlign.center),
+          child:Text("Mariana Mortágua acusa PS de falhar na Saúde e Habitação.", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
         ),
         Container(
           width: 480,
