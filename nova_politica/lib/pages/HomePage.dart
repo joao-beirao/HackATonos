@@ -22,10 +22,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: 'Nova Politica',
         home: Scaffold(
           appBar: AppBar(
-            title: new Center(
-                child: new Text('Nova Política',
+            title: Center(
+                child: Text('Nova Política',
                     style: GoogleFonts.lobster(
-                        textStyle: TextStyle(fontSize: 40)))),
+                        textStyle: const TextStyle(fontSize: 40)))),
           ),
           drawer: Drawer(
             child: SingleChildScrollView(
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
                       },
                       child: Container(
-                        padding: EdgeInsets.only(top: 24, bottom: 50),
+                        padding: const EdgeInsets.only(top: 24, bottom: 50),
                         child: const Column(
                           children: [
                             CircleAvatar(
@@ -68,31 +68,31 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       ListTile(
                         leading: const Icon(Icons.home_outlined),
-                        title: Text('Início'),
+                        title: const Text('Início'),
                         onTap: () {},
                       ),
                       ListTile(
-                        leading: Icon(Icons.menu_book_outlined),
-                        title: Text('Guia para Iniciante'),
+                        leading: const Icon(Icons.menu_book_outlined),
+                        title: const Text('Guia para Iniciante'),
                         onTap: () {
                           //COLOCAR HIPERLIGAÇÃO
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.quiz_outlined),
-                        title: Text('Quiz'),
+                        leading: const Icon(Icons.quiz_outlined),
+                        title: const Text('Quiz'),
                         onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => const MyAboutPage(),
-                              ),
-                            );
-                          },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyAboutPage(),
+                            ),
+                          );
+                        },
                       ),
                       ListTile(
-                        leading: Icon(Icons.forum_outlined),
-                        title: Text('Forum'),
+                        leading: const Icon(Icons.forum_outlined),
+                        title: const Text('Forum'),
                         onTap: () {
                           //COLOCAR HIPERLIGAÇÃO
                         },
@@ -105,42 +105,55 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: ListView(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Align(
-                  alignment: Alignment.center,
+                alignment: Alignment.center,
+                child: Container(
+                    height: 500,
+                    width: 2000,
+                    child: Image.network(
+                        'https://media-manager.noticiasaominuto.com/1920/naom_5cebeda3ee509.jpg')),
+              ),
+              Center(
                   child: Container(
-                height: 500,
-                width: 2000,
-                child:Image.network(
-                      'https://media-manager.noticiasaominuto.com/1920/naom_5cebeda3ee509.jpg')),),
-              Center(child: Container(
                 height: 200,
                 width: 800,
-                child: Center( child:Text(
+                child: Center(
+                  child: Text(
                     'Seja bem vindo ao Nova Política, uma maneira inovadora de estar a par da política portuguesa!',
-                    style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
+                    style:
+                        GoogleFonts.oswald(textStyle: const TextStyle(fontSize: 40)),
                     textAlign: TextAlign.center,
                   ),
+                ),
+              )),
+              Align(
+                  alignment: Alignment.topCenter,
+                  child: Image.network(
+                      'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
+              Center(
+                child: Container(
+                  height: 500,
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: GestureDetector(
+                      onTap: () {
+                        // INSERIR LINK UP
+                        _launchURL('https://www.example.com');
+                      },
+                      child: const Text(
+                        'Saber Mais',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
                   ),
-                )
+                ),
               ),
-              Align(alignment: Alignment.topCenter, child: Image.network(
-                  'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
-              Center(child: Container(height:500, child: Align(alignment: Alignment.topCenter, child: GestureDetector(
-            onTap: () { // INSERIR LINK UP
-              _launchURL('https://www.example.com');
-            },
-            child: Text(
-              'Saber Mais',
-              style: TextStyle(
-                color: Colors.grey,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ),),),),
-              
               BottomAppBar(
                   color: Colors.grey.withOpacity(0.1),
                   child: Row(
@@ -157,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             );
                           },
                           child: Text('Sobre Nós')),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text('Nova Política 2024 '),
@@ -173,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           );
                         },
-                        child: Text('Contactos'),
+                        child: const Text('Contactos'),
                       )
                     ],
                   ))
@@ -182,12 +195,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 
-    void _launchURL(String url) async {
+  void _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
       throw 'Could not launch $url';
     }
   }
-  
 }
