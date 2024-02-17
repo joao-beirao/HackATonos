@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'GuidePage.dart';
@@ -98,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           );
                         },
                       ),
+                      // !!!ERRO!!! - Após iniciar o quiz, voltando para trás, já não é possível ver o menu dos partidos!
                       ListTile(
                         leading: const Icon(Icons.group_outlined),
                         title: const Text('Partidos'),
@@ -229,13 +231,17 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
   void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    //if (await canLaunch(url)) {
+    //  await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       throw 'Could not launch $url';
     }
   }
 class News1 extends StatelessWidget {  
+  const News1({super .key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -255,7 +261,9 @@ class News1 extends StatelessWidget {
           width: 200,
           child:Text("Marcelo recebe Ireneu Barreto esta manhã em Belém.", style: GoogleFonts.nunito(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
         ),
-        Container(
+        SizedBox(
+        //foi aconselhado usar SizedBox em vez de Container
+        //Container(
           width: 480,
           height: 400, 
           child: Image.network("https://static-storage.dnoticias.pt/www-assets.dnoticias.pt/images/configuration/R/de748e4a-8d3.png"))
@@ -267,6 +275,7 @@ class News1 extends StatelessWidget {
 }
 
 class News2 extends StatelessWidget {  
+  //const News2({super .key});
 
   var a = "2024_02_16_21_54_34_1573604";
   @override
