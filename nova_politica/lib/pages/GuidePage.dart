@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'ContactPage.dart';
 import 'AboutPage.dart';
 import 'HomePage.dart';
+import 'QuizPage.dart';
 
 
 class MyGuide extends StatelessWidget {
@@ -95,7 +96,7 @@ class MyGuide extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const MyAboutPage(),
+                              builder: (_) => const MyQuizApp(),
                             ),
                           );
                         },
