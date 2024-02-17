@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
+import 'package:nova_politica/pages/QuizPage.dart';
 import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'QuizPage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -81,8 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         leading: Icon(Icons.quiz_outlined),
                         title: Text('Quiz'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
-                        },
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const MyAboutPage(),
+                              ),
+                            );
+                          },
                       ),
                       ListTile(
                         leading: Icon(Icons.forum_outlined),

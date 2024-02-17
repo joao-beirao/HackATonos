@@ -10,6 +10,7 @@ class MyAboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Sobre Nós',
       home: Scaffold(
         appBar: AppBar(
