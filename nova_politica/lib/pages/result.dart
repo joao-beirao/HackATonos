@@ -1,76 +1,183 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nova_politica/main.dart';
+import 'package:nova_politica/pages/PoliticalPartiesPage.dart';
+
+import 'GuidePage.dart';
+import 'partidos/PartidoSocialista.dart';
 
 class Result extends StatelessWidget {
   final int resultScoreX;
   final int resultScoreY;
   final Function resetHandler;
 
-  const Result(this.resultScoreX, this.resultScoreY, this.resetHandler, {Key? key})
+  final Map<String, List<int>> partyCoordinates = {
+    'CH': [190, -330],
+    'CDS-PP': [220, -250],
+    'IL': [400, 280],
+    'PSD': [80, 150],
+    'PS': [-310, 300],
+    'L': [-430, 500],
+    'BE': [-440, 300],
+    'CDU': [-400, 160],
+    'PAN': [-130, 300],
+  };
+
+  Result(this.resultScoreX, this.resultScoreY, this.resetHandler, {Key? key})
       : super(key: key);
 
-  // Remark Logic
-  String get resultPhrase {
-    String resultText;
-    if (resultScoreX >= 90) {
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o Chega';
-    } else if (resultScoreX >= 70 && resultScoreX < 90) {
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o CDS-PP';
-    } else if (resultScoreX >= 45 && resultScoreX < 70) {
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o IL';
-    } else if (resultScoreX >= 10 && resultScoreX < 45) {
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o PSD';
-    } else if (resultScoreX >= -30 && resultScoreX < 10){
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o PS';
-    }
-    else if (resultScoreX >= -55 && resultScoreX < -30){
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o Livre';
-    }
-    else if (resultScoreX >= -75 && resultScoreX < -55){
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o BE';
-    }
-    else if (resultScoreX >= -90 && resultScoreX < -75){
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o CDU';
-    }
-    else{
-      resultText = 'O Partido do qual as suas respostas mais se aproximam é o PAN';
-    }
-    return resultText;
+  double calculateDistance(List<int> coords1, List<int> coords2) {
+    int dx = coords1[0] - coords2[0];
+    int dy = coords1[1] - coords2[1];
+    return sqrt(dx * dx + dy * dy);
+  }
+
+  String findNearestParty() {
+    String nearestParty = '';
+    double minDistance = double.infinity;
+    partyCoordinates.forEach((party, coords) {
+      double distance = calculateDistance([resultScoreX, resultScoreY], coords);
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestParty = party;
+      }
+    });
+    return nearestParty;
   }
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            resultPhrase,
-            style: (
-                       const TextStyle(fontSize: 42,fontWeight: FontWeight.bold,color: Colors.black,  decoration: TextDecoration.none)),
-            textAlign: TextAlign.center,
-          ),
-          const Text('Baseado neste gráfico:',style: (
-                       TextStyle(fontSize: 42,fontWeight: FontWeight.bold,color: Colors.black,  decoration: TextDecoration.none)),
-            textAlign: TextAlign.center,),
-          Image.network('https://cdn.discordapp.com/attachments/1207684391283982357/1208362416929509386/qFAAQgAAEIQAACEIAABCBwmQTD3Jfz08F8VtmAAAAAElFTkSuQmCC.png?ex=65e30232&is=65d08d32&hm=16d9070231c367b6425a901e0fe69346efb045cea15c8d93d826d7b0eb24d1bd&'),
-          TextButton(
-            onPressed: () => resetHandler(),
-            style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.grey),
-            minimumSize: MaterialStateProperty.all(const Size(70.0, 70.0)),
-          ),
-            child: Container(
-              padding: const EdgeInsets.all(14),
-              child: const Text(
-                'Recomeçar',
-                style: TextStyle(color: Colors.white,fontSize: 28),
+    String nearestParty = findNearestParty();
+    return ListView(children: [
+      Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            
+            Text(
+              'O Partido do qual as suas respostas mais se aproximam é o $nearestParty',
+              style: (const TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  decoration: TextDecoration.none)),
+              textAlign: TextAlign.center,
+            ),
+            TextButton(
+              onPressed: () => {/*
+                if(nearestParty == 'CH'){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CH()),
+                    ),
+                }
+                else if (nearestParty == 'CDS-PP')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CDS-PP()),
+                    ),
+                  }
+                  else if (nearestParty == 'IL')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IL()),
+                    ),
+                  }
+                  else if (nearestParty == 'PSD')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PSD()),
+                    ),
+                  }*/
+                  //else
+                   if (nearestParty == 'PS')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PS()),
+                    ),
+                  }/*
+                  else if (nearestParty == 'IL')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const L()),
+                    ),
+                  }
+                  else if (nearestParty == 'IL')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BE()),
+                    ),
+                  }
+                else if (nearestParty == 'PS')
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CDU()),
+                    ),
+                  }
+                  else{
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PAN()),
+                    ),
+                  }*/
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+                minimumSize: MaterialStateProperty.all(const Size(70.0, 70.0)),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(14),
+                child: const Text(
+                  'Saber Mais',
+                  style: TextStyle(color: Colors.white, fontSize: 22),
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-    )]);
+            const Text(
+              'Baseado neste gráfico:',
+              style: (TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  decoration: TextDecoration.none)),
+              textAlign: TextAlign.center,
+            ),
+            Image.network(
+                'https://cdn.discordapp.com/attachments/1207684391283982357/1208362416929509386/qFAAQgAAEIQAACEIAABCBwmQTD3Jfz08F8VtmAAAAAElFTkSuQmCC.png?ex=65e30232&is=65d08d32&hm=16d9070231c367b6425a901e0fe69346efb045cea15c8d93d826d7b0eb24d1bd&'),
+            TextButton(
+              onPressed: () => resetHandler(),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.grey),
+                minimumSize: MaterialStateProperty.all(const Size(70.0, 70.0)),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(14),
+                child: const Text(
+                  'Recomeçar',
+                  style: TextStyle(color: Colors.white, fontSize: 28),
+                ),
+              ),
+            ),
+          ],
+        ),
+      )
+    ]);
   }
 }
