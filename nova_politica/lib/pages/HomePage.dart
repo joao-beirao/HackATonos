@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
+import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const MyAboutPage(),
+                              builder: (_) => const MyQuizApp(),
                             ),
                           );
                         },
