@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
-import 'package:nova_politica/pages/QuizPage.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'QuizPage.dart';
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
                       },
                       child: Container(
-                        padding: EdgeInsets.only(top: 24, bottom: 24),
+                        padding: EdgeInsets.only(top: 24, bottom: 50),
                         child: const Column(
                           children: [
                             CircleAvatar(
@@ -110,17 +110,37 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Align(
                   alignment: Alignment.center,
-                  child: Image.network(
-                      'https://media-manager.noticiasaominuto.com/1920/naom_5cebeda3ee509.jpg')),
-              Container( child: Center(
-                child: Text(
-                  'Seja bem vindo ao Nova Política, uma maneira inovadora de estar a par da política portuguesa!',
-                  style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
-                  textAlign: TextAlign.center,
-                ),
-              ), margin: EdgeInsets.all(20.0)),
+                  child: Container(
+                height: 500,
+                width: 2000,
+                child:Image.network(
+                      'https://media-manager.noticiasaominuto.com/1920/naom_5cebeda3ee509.jpg')),),
+              Center(child: Container(
+                height: 200,
+                width: 800,
+                child: Center( child:Text(
+                    'Seja bem vindo ao Nova Política, uma maneira inovadora de estar a par da política portuguesa!',
+                    style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
+                    textAlign: TextAlign.center,
+                  ),
+                  ),
+                )
+              ),
               Align(alignment: Alignment.topCenter, child: Image.network(
                   'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
+              Center(child: Container(height:500, child: Align(alignment: Alignment.topCenter, child: GestureDetector(
+            onTap: () { // INSERIR LINK UP
+              _launchURL('https://www.example.com');
+            },
+            child: Text(
+              'Saber Mais',
+              style: TextStyle(
+                color: Colors.grey,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),),),),
+              
               BottomAppBar(
                   color: Colors.grey.withOpacity(0.1),
                   child: Row(
@@ -161,4 +181,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ));
   }
+
+    void _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+  
 }
