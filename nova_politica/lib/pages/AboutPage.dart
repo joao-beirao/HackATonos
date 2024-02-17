@@ -14,6 +14,7 @@ class MyAboutPage extends StatelessWidget {
       title: 'Sobre Nós',
       home: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 100,
           backgroundColor: Colors.red,
           title: const Text('Sobre Nós'), 
           ),

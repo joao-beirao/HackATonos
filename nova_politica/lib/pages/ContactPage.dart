@@ -14,6 +14,7 @@ class MyContactPage extends StatelessWidget {
       title: 'Contactos',
       home: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 100,
           backgroundColor: Colors.green,
           title: const Text('Contactos'), 
           ),

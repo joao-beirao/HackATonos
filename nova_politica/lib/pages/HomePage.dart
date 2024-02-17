@@ -3,7 +3,7 @@ import 'package:nova_politica/pages/AboutPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'QuizPage.dart';
+import 'GuidePage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -22,6 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: 'Nova Politica',
         home: Scaffold(
           appBar: AppBar(
+            toolbarHeight: 100,
             title: Center(
                 child: Text('Nova Política',
                     style: GoogleFonts.lobster(
@@ -73,9 +74,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       ListTile(
                         leading: const Icon(Icons.menu_book_outlined),
-                        title: const Text('Guia para Iniciante'),
+                        title: const Text('Guia para Iniciantes'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyGuide(),
+                            ),
+                          );
                         },
                       ),
                       ListTile(
@@ -122,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 800,
                 child: Center(
                   child: Text(
-                    'Seja bem vindo ao Nova Política, uma maneira inovadora de estar a par da política portuguesa!',
+                    'Seja bem vindo ao Nova Política, uma maneira inovadora de estar a par da Política Portuguesa!',
                     style:
                         GoogleFonts.oswald(textStyle: const TextStyle(fontSize: 40)),
                     textAlign: TextAlign.center,
@@ -132,7 +138,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Align(
                   alignment: Alignment.topCenter,
                   child: Image.network(
-                      'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&')),
+                      'https://cdn.discordapp.com/attachments/1171195359947657278/1208221458707521616/Sondagens_Iscte.png?ex=65e27eeb&is=65d009eb&hm=41603c4357c69dffcea15de2c8c8d96827097ac27d3d8469d36cd6afa302e8c6&'
+                      )),
               Center(
                 child: Container(
                   height: 500,
