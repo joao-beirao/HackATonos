@@ -181,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => const MyAboutPage(),
+                                builder: (_) => const MyQuizApp(),
                               ),
                             );
                           },
