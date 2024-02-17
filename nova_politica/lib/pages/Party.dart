@@ -86,6 +86,12 @@ class MyGuide extends StatelessWidget {
                         leading: const Icon(Icons.menu_book_outlined),
                         title: const Text('Guia para Iniciantes'),
                         onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyGuide(),
+                            ),
+                          );
                         },
                       ),
                       ListTile(
@@ -116,14 +122,13 @@ class MyGuide extends StatelessWidget {
           
             body: Center(child:Container(
               width: 800,
-              child:ListView(
-              children: [
+              child:ListView(children: [
               Container(
-                    height: 100,
-                    margin: const EdgeInsets.fromLTRB(40.0, 5.0, 0.0, 0.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
+                height: 100,
+                
+                margin: const EdgeInsets.fromLTRB(40.0, 5.0, 0.0, 0.0), child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
                   'Esquerda e Direita??',
                   style: GoogleFonts.exo2(
                       textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
@@ -372,7 +377,48 @@ class MyGuide extends StatelessWidget {
             child: Text('Uma ideologia que promove a cooperação internacional, a integração econômica e política entre os países e a interdependência global. Os globalistas tendem a apoiar instituições internacionais, como a ONU e a UE, e políticas que visam resolver problemas globais, como mudanças climáticas, comércio internacional e direitos humanos.', 
             style: GoogleFonts.signikaNegative(textStyle: const TextStyle(fontSize: 25)),
             )),
+
+            ]
+             )
+            )
+            ),
+            bottomNavigationBar: BottomAppBar(
+                  color: Colors.grey.withOpacity(0.1),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const MyAboutPage(),
+                              ),
+                            );
+                          },
+                          child: Text('Sobre Nós')),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Nova Política 2024 '),
+                          Icon(Icons.copyright_rounded),
+                        ],
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyContactPage(),
+                            ),
+                          );
+                        },
+                        child: const Text('Contactos'),
+                      )
+                    ],
+                  )),
               
-            ])))));
+            ));
   }
 }
