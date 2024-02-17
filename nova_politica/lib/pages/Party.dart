@@ -86,6 +86,12 @@ class MyGuide extends StatelessWidget {
                         leading: const Icon(Icons.menu_book_outlined),
                         title: const Text('Guia para Iniciantes'),
                         onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyGuide(),
+                            ),
+                          );
                         },
                       ),
                       ListTile(
