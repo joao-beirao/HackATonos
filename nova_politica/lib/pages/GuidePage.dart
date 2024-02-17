@@ -22,6 +22,7 @@ class MyGuide extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(
               toolbarHeight: 100,
+              backgroundColor: Colors.orange.withOpacity(0.7),
               title: Center(
                   child: Text('Guia para Iniciantes',
                       style: GoogleFonts.lobster(
