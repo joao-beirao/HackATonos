@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nova_politica/pages/PartidoSocialista.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:nova_politica/pages/GuidePage.dart';
+import 'package:nova_politica/pages/HomePage.dart';
+import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:nova_politica/pages/partidos/PartidoSocialista.dart';
 
 class MyPartiesApp extends StatelessWidget {
@@ -11,10 +14,106 @@ class MyPartiesApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Partidos Políticos',
       home: Scaffold(
-          appBar: AppBar(
-            toolbarHeight: 100,
-            backgroundColor: Colors.indigo,
-            title: const Text('Partidos Políticos'),
+      appBar: AppBar(
+        toolbarHeight: 100,
+        title: Center(child: Text('Partidos Políticos', style: GoogleFonts.lobster(textStyle: const TextStyle(fontSize: 40)))),
+        actions: <Widget>[
+
+        ],
+      ),
+          drawer: Drawer(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Material(
+                    color: Colors.grey,
+                    child: InkWell(
+                      onTap: () {
+                        //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 24, bottom: 50),
+                        child: const Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 50,
+                              backgroundImage: NetworkImage(''),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              'João',
+                              style:
+                                  TextStyle(fontSize: 28, color: Colors.white),
+                            ),
+                            Text(
+                              'joao@gmail.com',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      ListTile(
+                        leading: const Icon(Icons.home_outlined),
+                        title: const Text('Início'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyHomePage(title: 'Nova Política'),
+                            ),
+                          );},
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.menu_book_outlined),
+                        title: const Text('Guia para Iniciantes'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyGuide(),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.quiz_outlined),
+                        title: const Text('Quiz'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyQuizApp(),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.group_outlined),
+                        title: const Text('Partidos'),
+                        onTap: () {
+                          
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.forum_outlined),
+                        title: const Text('Forum'),
+                        onTap: () {
+                          //COLOCAR HIPERLIGAÇÃO
+                        },
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
           body: ListView(children: [Column(
             crossAxisAlignment: CrossAxisAlignment.end,
