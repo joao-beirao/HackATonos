@@ -239,7 +239,7 @@ class News1 extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(20),
           width: 200,
-          child:Text("Marcelo recebe Ireneu Barreto esta manhã em Belém", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
+          child:Text("Marcelo recebe Ireneu Barreto esta manhã em Belém.", style: GoogleFonts.nunito(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
         ),
         Container(
           width: 480,
@@ -276,7 +276,7 @@ class News2 extends StatelessWidget {
         Container(
           width: 200,
           padding: EdgeInsets.all(20),
-          child:Center(child:Text("Hipocrisia, Lula da Silva ou Putin.", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center)),
+          child:Center(child:Text("Hipocrisia, Lula da Silva ou Putin.", style: GoogleFonts.nunito(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center)),
         ),
         ])
       ),
@@ -302,7 +302,7 @@ class News3 extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(20),
           width: 200,
-          child:Text("Mariana Mortágua acusa PS de falhar na Saúde e Habitação.", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
+          child:Text("Mariana Mortágua acusa PS de falhar na Saúde e Habitação.", style: GoogleFonts.nunito(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
         ),
         Container(
           width: 480,
