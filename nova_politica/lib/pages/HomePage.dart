@@ -142,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       )),
               Center(
                 child: Container(
-                  height: 500,
+                  height: 100,
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: GestureDetector(
@@ -161,6 +161,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              
+              Center(child:News1(),),
+              Container(height: 30,),
+              Center(child:News2(),),
+              Container(height: 30,),
+              Center(child:News3(),),
+              Container(height: 30,),
+
               BottomAppBar(
                   color: Colors.grey.withOpacity(0.1),
                   child: Row(
@@ -202,11 +210,107 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 
+
+  
+}
+
   void _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
       throw 'Could not launch $url';
     }
+  }
+class News1 extends StatelessWidget {  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+            onTap: () { // INSERIR LINK UP
+              _launchURL('https://www.dnoticias.pt/2024/2/16/394240-marcelo-recebe-ireneu-barreto-esta-manha-em-belem/');
+            },
+            child: Container( 
+      height: 270,
+      width: 680,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62)
+      )
+    ,
+      child: Row(children:[
+        Container(
+          padding: EdgeInsets.all(20),
+          width: 200,
+          child:Text("Marcelo recebe Ireneu Barreto esta manhã em Belém", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
+        ),
+        Container(
+          width: 480,
+          height: 400, 
+          child: Image.network("https://static-storage.dnoticias.pt/www-assets.dnoticias.pt/images/configuration/R/de748e4a-8d3.png"))
+
+        ])
+      ),
+    );
+  }
+}
+
+class News2 extends StatelessWidget {  
+
+  var a = "2024_02_16_21_54_34_1573604";
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+            onTap: () { // INSERIR LINK UP
+              _launchURL('https://cnnportugal.iol.pt/eleicoes-legislativas/debate/hipocrisia-lula-da-silva-ou-putin-andre-ventura-e-rui-tavares-num-debate-pouco-claro/20240216/65bd1e4ad34e65afa2fa5d50');
+            },
+      child: Container( 
+      height: 270,
+      width: 680,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62)
+      )
+    ,
+      child: Row(children:[
+        Container(
+          width: 480,
+          height: 400, 
+          child: Image.network("https://cdn.discordapp.com/attachments/1208282567002820609/1208282602495021067/1024.jpg?ex=65e2b7dd&is=65d042dd&hm=7dab45bb23375d511e157511f4d7cdd55945cf2a9d5cf52632fa8a0670665ad2&")),
+        Container(
+          width: 200,
+          padding: EdgeInsets.all(20),
+          child:Center(child:Text("Hipocrisia, Lula da Silva ou Putin.", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center)),
+        ),
+        ])
+      ),
+    );
+  }
+}
+
+class News3 extends StatelessWidget {  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+            onTap: () { // INSERIR LINK UP
+              _launchURL('https://www.cmjornal.pt/politica/detalhe/mariana-mortagua-acusa-ps-de-falhar-na-saude-e-habitacao-pedro-nuno-contesta-solucoes-do-be-');
+            },
+            child: Container( 
+      height: 270,
+      width: 680,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62)
+      )
+    ,
+      child: Row(children:[
+        Container(
+          padding: EdgeInsets.all(20),
+          width: 200,
+          child:Text("Mariana Mortágua acusa PS de falhar na Saúde e Habitação.", style: TextStyle(fontSize: 25, color: Color.fromARGB(255, 242, 242, 242)),textAlign: TextAlign.center),
+        ),
+        Container(
+          width: 480,
+          height: 400, 
+          child: Image.network("https://cdn.discordapp.com/attachments/1208282567002820609/1208287647261397072/img_1280x7202024_02_16_21_54_34_1573604.jpeg?ex=65e2bc90&is=65d04790&hm=35c25a270e6d5e8f48188f674f764535737fcae8bad998d0bf7328993cdb8408&"))
+
+        ])
+      ),
+    );
   }
 }

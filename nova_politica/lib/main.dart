@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/HomePage.dart';
+import 'package:nova_politica/pages/HomePage.dart';
 void main() {
   runApp(const MyApp());
 }
