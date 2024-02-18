@@ -322,7 +322,7 @@ class CreatePostPage extends StatelessWidget {
                 String content = _contentController.text.trim();
                 // Add the post to Firestore
                 FirebaseFirestore.instance.collection('posts').add({
-                  'username': 'user@example.com', // Replace with actual username/email
+                  'username': '$userEmail', // Replace with actual username/email
                   'title': title,
                   'content': content,
                 });
