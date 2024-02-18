@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
+        backgroundColor: Color.fromARGB(255, 228, 228, 228),
         title: Center(child: Text('Nova Política', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
           if (!isLoggedIn) // Only show login and register buttons if not logged in

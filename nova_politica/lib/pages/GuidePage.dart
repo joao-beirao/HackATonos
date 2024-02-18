@@ -28,7 +28,7 @@ class MyGuide extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(
               toolbarHeight: 100,
-              backgroundColor: Colors.orange.withOpacity(0.7),
+              backgroundColor: Color.fromARGB(255, 255, 168, 38).withOpacity(0.7),
               title: Center(
                   child: Text('Guia para Iniciantes',
                       style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),

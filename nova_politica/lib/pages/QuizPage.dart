@@ -274,6 +274,7 @@ class _MyQuizAppState extends State<MyQuizApp> {
       home: Scaffold(
         appBar: AppBar(
           toolbarHeight: 100,
+          backgroundColor: Color.fromARGB(255, 143, 255, 143),  
           title: Center(
               child: Text('Quiz',
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),

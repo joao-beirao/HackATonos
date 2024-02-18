@@ -39,7 +39,7 @@ class ForumPage extends StatelessWidget {
     return Scaffold(
             appBar: AppBar(
               toolbarHeight: 100,
-              backgroundColor: Colors.white,
+              backgroundColor: Color.fromARGB(255, 177, 166, 255),
               title: Center(
                   child: Text('Forum',
                       style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),

@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nova_politica/pages/ForumPage.dart';
 import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
-import 'package:nova_politica/pages/PartidoSocialista.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:nova_politica/pages/partidos/BlocoDeEsquerda.dart';
 import 'package:nova_politica/pages/partidos/CDSPartidoPopular.dart';
@@ -25,6 +24,7 @@ class MyPartiesApp extends StatelessWidget {
       title: 'Partidos Políticos',
       home: Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 255, 142, 249),
         toolbarHeight: 100,
         title: Center(child: Text('Partidos Políticos', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
