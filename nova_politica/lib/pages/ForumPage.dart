@@ -173,7 +173,8 @@ class ForumPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Column(children: [
                       ListTile(
-                        title: Text(posts[index].title),
+                        title: Text(
+                            '${posts[index].title} | By: ${posts[index].username}'), // Display user's name beside post title
                         subtitle: Text(posts[index].content),
                         onTap: () {
                           Navigator.push(
