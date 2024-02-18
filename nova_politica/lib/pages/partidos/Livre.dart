@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,12,169,102);
+const Color MAIN_COLOR = Color.fromARGB(255,195,214,0);
 
-class PS extends StatelessWidget {
-  const PS({super .key});
+class L extends StatelessWidget {
+  const L({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PS extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Partido Socialista', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+        title: Center(child: Text('Livre', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -132,8 +132,8 @@ class PS extends StatelessWidget {
           Container(
             height: 450,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/70349639/1707244508/1080x360'), // Path to your banner image
+              image: DecorationImage(     //  ### BANNER ###
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/2197487762/1703084128/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Partido Socialista',
+                          'Livre',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'PS',
+                          'L',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O Partido Socialista Português (PS) é um partido político de centro-esquerda em Portugal. Fundado após a Revolução dos Cravos em 1974, o PS promove princípios sociais-democratas e políticas progressistas. Defende a justiça social, igualdade de oportunidades e um Estado de bem-estar social. Alternando-se no poder com o PSD, seu principal rival, o PS tem influenciado significativamente as políticas portuguesas desde então. Liderado por uma direção nacional eleita democraticamente, o partido desempenha um papel fundamental na política portuguesa.',
+                      'O partido político português LIVRE foi fundado em 2014, com uma abordagem progressista e foco em questões de justiça social, ambientalismo e direitos humanos. Defende políticas inclusivas, democráticas e sustentáveis, buscando um papel ativo na política nacional e europeia através de uma plataforma de esquerda. Liderado por membros engajados na sociedade civil, o LIVRE tem como objetivo promover uma governança mais transparente e participativa, além de representar uma alternativa às forças políticas tradicionais em Portugal.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class PS extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Reforço do Sistema de Saúde: Investimento em infraestrutura, equipamentos e pessoal para garantir acesso universal e qualidade nos cuidados de saúde."),
+                    Proposal(number: "1.",text: "Justiça Social: Implementação de políticas de redistribuição de renda para combater a desigualdade e a pobreza."),
 
-                    Proposal(number: "2.",text: "Promoção da Educação Inclusiva: Implementação de medidas para garantir educação de qualidade para todos, com foco na inclusão e igualdade de oportunidades."),
+                    Proposal(number: "2.",text: "Sustentabilidade Ambiental: Promoção de energias renováveis, proteção da biodiversidade e combate às mudanças climáticas."),
 
-                    Proposal(number: "3.",text: "Impulso à Economia Verde: Estímulo a setores sustentáveis, incentivando energias renováveis e práticas ambientalmente responsáveis."),
+                    Proposal(number: "3.",text: "Democracia Participativa: Estímulo à participação cidadã e transparência na gestão pública."),
 
-                    Proposal(number: "4.",text: "Combate à Pobreza e Desigualdade: Implementação de políticas sociais para reduzir a pobreza e a desigualdade, através de programas de apoio e redistribuição de renda."),
+                    Proposal(number: "4.",text: "Igualdade de Gênero: Promoção da igualdade de oportunidades e combate à discriminação de gênero."),
 
-                    Proposal(number: "5.",text: "Reforma do Sistema Fiscal: Adoção de medidas para tornar o sistema fiscal mais justo e progressivo, combatendo a evasão fiscal e taxando mais os mais ricos."),
+                    Proposal(number: "5.",text: "Educação Inclusiva: Garantia de acesso universal à educação de qualidade, com foco na diversidade e inclusão."),
 
-                    Proposal(number: "6.",text: "Fortalecimento dos Direitos Laborais: Proteção e valorização dos direitos dos trabalhadores, promovendo condições laborais dignas e seguras."),
+                    Proposal(number: "6.",text: "Proteção dos Direitos Humanos: Defesa dos direitos individuais e coletivos, sem discriminação."),
 
-                    Proposal(number: "7.",text: "Investimento em Infraestrutura: Modernização e expansão da infraestrutura pública, com foco em transporte, habitação e comunicações."),
+                    Proposal(number: "7.",text: "Reforma Política: Democratização das instituições, com medidas de combate à corrupção e financiamento transparente das campanhas."),
 
-                    Proposal(number: "8.",text: "Reforma da Justiça: Melhoria do sistema judicial para garantir maior eficiência, transparência e acesso igualitário à justiça."),
+                    Proposal(number: "8.",text: "Saúde Pública Universal: Investimento em saúde preventiva e acesso universal aos serviços de saúde."),
 
-                    Proposal(number: "9.",text: "Promoção da Cultura e Artes: Apoio ao setor cultural e artístico, incentivando a produção e acesso à cultura em todas as suas formas."),
+                    Proposal(number: "9.",text: "Economia Solidária: Estímulo ao cooperativismo e à economia social, com ênfase na justiça econômica e no desenvolvimento local."),
 
-                    Proposal(number: "10.",text: "Reforço da Democracia Participativa: Promoção de mecanismos de participação cidadã e transparência na governança, fortalecendo a democracia e o envolvimento da sociedade civil."),
+                    Proposal(number: "10.",text: "Integração Europeia Democrática: Promoção de uma União Europeia mais democrática e solidária, com maior participação dos cidadãos e respeito à diversidade cultural e política."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://ps.pt/');
+                        _launchURL('https://partidolivre.pt/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',

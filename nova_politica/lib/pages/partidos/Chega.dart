@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,12,169,102);
+const Color MAIN_COLOR = Color.fromARGB(255,33,35,84);
 
-class PS extends StatelessWidget {
-  const PS({super .key});
+class CH extends StatelessWidget {
+  const CH({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PS extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Partido Socialista', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+        title: Center(child: Text('Chega', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white))),
         actions: <Widget>[
 
         ],
@@ -133,7 +133,7 @@ class PS extends StatelessWidget {
             height: 450,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/70349639/1707244508/1080x360'), // Path to your banner image
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/1070088307894349825/1701104163/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Partido Socialista',
+                          'Chega',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'PS',
+                          'CH',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O Partido Socialista Português (PS) é um partido político de centro-esquerda em Portugal. Fundado após a Revolução dos Cravos em 1974, o PS promove princípios sociais-democratas e políticas progressistas. Defende a justiça social, igualdade de oportunidades e um Estado de bem-estar social. Alternando-se no poder com o PSD, seu principal rival, o PS tem influenciado significativamente as políticas portuguesas desde então. Liderado por uma direção nacional eleita democraticamente, o partido desempenha um papel fundamental na política portuguesa.',
+                      'O partido político português Chega foi fundado em 2019, apresentando-se como uma alternativa de direita no cenário político do país. Sua plataforma é caracterizada por uma postura nacionalista, conservadora e anti-sistema, com ênfase em questões como segurança, imigração e identidade cultural. Liderado por André Ventura, o partido tem suscitado controvérsias devido a posicionamentos considerados polêmicos e radicais por alguns setores da sociedade portuguesa.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class PS extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Reforço do Sistema de Saúde: Investimento em infraestrutura, equipamentos e pessoal para garantir acesso universal e qualidade nos cuidados de saúde."),
+                    Proposal(number: "1.",text: "Fortalecimento da Segurança Pública: Aumento do efetivo policial, investimento em tecnologia e medidas mais severas contra o crime e a violência."),
 
-                    Proposal(number: "2.",text: "Promoção da Educação Inclusiva: Implementação de medidas para garantir educação de qualidade para todos, com foco na inclusão e igualdade de oportunidades."),
+                    Proposal(number: "2.",text: "Controle Rigoroso da Imigração: Restrição da entrada de imigrantes ilegais e revisão dos critérios de concessão de visto para proteger os interesses nacionais."),
 
-                    Proposal(number: "3.",text: "Impulso à Economia Verde: Estímulo a setores sustentáveis, incentivando energias renováveis e práticas ambientalmente responsáveis."),
+                    Proposal(number: "3.",text: "Promoção dos Valores Tradicionais: Apoio à família tradicional, defesa da moralidade e dos princípios cristãos na sociedade."),
 
-                    Proposal(number: "4.",text: "Combate à Pobreza e Desigualdade: Implementação de políticas sociais para reduzir a pobreza e a desigualdade, através de programas de apoio e redistribuição de renda."),
+                    Proposal(number: "4.",text: "Redução da Burocracia e do Estado: Simplificação de processos administrativos e diminuição da intervenção estatal na economia e na vida dos cidadãos."),
 
-                    Proposal(number: "5.",text: "Reforma do Sistema Fiscal: Adoção de medidas para tornar o sistema fiscal mais justo e progressivo, combatendo a evasão fiscal e taxando mais os mais ricos."),
+                    Proposal(number: "5.",text: "Combate à Corrupção: Implementação de medidas rigorosas contra a corrupção e a impunidade, promovendo a transparência e a integridade na gestão pública."),
 
-                    Proposal(number: "6.",text: "Fortalecimento dos Direitos Laborais: Proteção e valorização dos direitos dos trabalhadores, promovendo condições laborais dignas e seguras."),
+                    Proposal(number: "6.",text: "Defesa da Soberania Nacional: Proteção dos interesses de Portugal perante organizações internacionais e fortalecimento das relações bilaterais com outros países."),
 
-                    Proposal(number: "7.",text: "Investimento em Infraestrutura: Modernização e expansão da infraestrutura pública, com foco em transporte, habitação e comunicações."),
+                    Proposal(number: "7.",text: "Valorização da Cultura Portuguesa: Promoção e preservação da identidade cultural nacional, incentivando o conhecimento e o orgulho da história e das tradições portuguesas."),
 
-                    Proposal(number: "8.",text: "Reforma da Justiça: Melhoria do sistema judicial para garantir maior eficiência, transparência e acesso igualitário à justiça."),
+                    Proposal(number: "8.",text: "Reforma do Sistema de Saúde: Melhoria da qualidade e do acesso aos serviços de saúde, com investimento em infraestrutura e valorização dos profissionais de saúde."),
 
-                    Proposal(number: "9.",text: "Promoção da Cultura e Artes: Apoio ao setor cultural e artístico, incentivando a produção e acesso à cultura em todas as suas formas."),
+                    Proposal(number: "9.",text: "Estímulo à Economia Nacional: Incentivo ao empreendedorismo, redução de impostos para empresas e medidas de proteção da indústria nacional."),
 
-                    Proposal(number: "10.",text: "Reforço da Democracia Participativa: Promoção de mecanismos de participação cidadã e transparência na governança, fortalecendo a democracia e o envolvimento da sociedade civil."),
+                    Proposal(number: "10.",text: "Educação de Qualidade: Modernização do sistema educativo, com ênfase no mérito e na excelência acadêmica, além de valorização dos professores e revisão dos currículos escolares."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://ps.pt/');
+                        _launchURL('https://partidochega.pt/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',

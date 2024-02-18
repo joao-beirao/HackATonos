@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,12,169,102);
+const Color MAIN_COLOR = Color.fromARGB(255,240,135,17);
 
-class PS extends StatelessWidget {
-  const PS({super .key});
+class PSD extends StatelessWidget {
+  const PSD({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PS extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Partido Socialista', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+        title: Center(child: Text('Partido Social Democrata', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -132,8 +132,8 @@ class PS extends StatelessWidget {
           Container(
             height: 450,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/70349639/1707244508/1080x360'), // Path to your banner image
+              image: DecorationImage(     //  ### BANNER ###
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/20560841/1705868233/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Partido Socialista',
+                          'Partido Social Democrata',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'PS',
+                          'PSD',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O Partido Socialista Português (PS) é um partido político de centro-esquerda em Portugal. Fundado após a Revolução dos Cravos em 1974, o PS promove princípios sociais-democratas e políticas progressistas. Defende a justiça social, igualdade de oportunidades e um Estado de bem-estar social. Alternando-se no poder com o PSD, seu principal rival, o PS tem influenciado significativamente as políticas portuguesas desde então. Liderado por uma direção nacional eleita democraticamente, o partido desempenha um papel fundamental na política portuguesa.',
+                      'O Partido Social Democrata (PSD) é um dos principais partidos políticos de Portugal, fundado em 1974 após a Revolução dos Cravos. Posiciona-se no centro-direita do espectro político, defendendo princípios sociais-democratas e políticas econômicas de mercado com uma forte intervenção estatal. Historicamente, o PSD tem alternado no poder com o Partido Socialista (PS), sendo um dos partidos mais influentes na política portuguesa. Seu programa inclui a promoção do desenvolvimento econômico, o reforço do Estado de bem-estar social, a defesa dos valores tradicionais e o compromisso com a União Europeia. Liderado por uma direção nacional eleita democraticamente, o PSD tem desempenhado um papel significativo na governança e na formulação de políticas do país.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class PS extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Reforço do Sistema de Saúde: Investimento em infraestrutura, equipamentos e pessoal para garantir acesso universal e qualidade nos cuidados de saúde."),
+                    Proposal(number: "1.",text: "Crescimento Econômico Sustentável: Estímulo ao empreendedorismo e investimento, visando criar empregos e promover a prosperidade."),
 
-                    Proposal(number: "2.",text: "Promoção da Educação Inclusiva: Implementação de medidas para garantir educação de qualidade para todos, com foco na inclusão e igualdade de oportunidades."),
+                    Proposal(number: "2.",text: "Modernização do Sistema de Saúde: Melhoria da eficiência, infraestrutura e acesso aos cuidados de saúde para todos os cidadãos."),
 
-                    Proposal(number: "3.",text: "Impulso à Economia Verde: Estímulo a setores sustentáveis, incentivando energias renováveis e práticas ambientalmente responsáveis."),
+                    Proposal(number: "3.",text: "Reforma Fiscal Justa: Simplificação do sistema tributário, redução de impostos para famílias e empresas."),
 
-                    Proposal(number: "4.",text: "Combate à Pobreza e Desigualdade: Implementação de políticas sociais para reduzir a pobreza e a desigualdade, através de programas de apoio e redistribuição de renda."),
+                    Proposal(number: "4.",text: "Educação de Qualidade: Investimento na formação de professores e modernização das escolas para garantir educação de excelência."),
 
-                    Proposal(number: "5.",text: "Reforma do Sistema Fiscal: Adoção de medidas para tornar o sistema fiscal mais justo e progressivo, combatendo a evasão fiscal e taxando mais os mais ricos."),
+                    Proposal(number: "5.",text: "Segurança Pública Eficiente: Reforço das forças policiais e medidas de prevenção para combater a criminalidade."),
 
-                    Proposal(number: "6.",text: "Fortalecimento dos Direitos Laborais: Proteção e valorização dos direitos dos trabalhadores, promovendo condições laborais dignas e seguras."),
+                    Proposal(number: "6.",text: "Proteção do Ambiente: Implementação de políticas de conservação, reciclagem e redução da poluição."),
 
-                    Proposal(number: "7.",text: "Investimento em Infraestrutura: Modernização e expansão da infraestrutura pública, com foco em transporte, habitação e comunicações."),
+                    Proposal(number: "7.",text: "Apoio às Famílias: Incentivos fiscais para a natalidade, creches acessíveis e medidas de conciliação trabalho-família."),
 
-                    Proposal(number: "8.",text: "Reforma da Justiça: Melhoria do sistema judicial para garantir maior eficiência, transparência e acesso igualitário à justiça."),
+                    Proposal(number: "8.",text: "Descentralização Administrativa: Fortalecimento dos municípios e das regiões para uma governança mais próxima dos cidadãos."),
 
-                    Proposal(number: "9.",text: "Promoção da Cultura e Artes: Apoio ao setor cultural e artístico, incentivando a produção e acesso à cultura em todas as suas formas."),
+                    Proposal(number: "9.",text: "Promoção da Inovação Tecnológica: Incentivo à pesquisa e desenvolvimento, com foco em tecnologias emergentes."),
 
-                    Proposal(number: "10.",text: "Reforço da Democracia Participativa: Promoção de mecanismos de participação cidadã e transparência na governança, fortalecendo a democracia e o envolvimento da sociedade civil."),
+                    Proposal(number: "10.",text: "Defesa dos Valores Tradicionais: Proteção da cultura, identidade nacional e valores morais na sociedade portuguesa."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://ps.pt/');
+                        _launchURL('https://www.psd.pt/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',

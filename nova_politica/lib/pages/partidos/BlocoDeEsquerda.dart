@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,12,169,102);
+const Color MAIN_COLOR = Color.fromARGB(255,218,8,19);
 
-class PS extends StatelessWidget {
-  const PS({super .key});
+class BE extends StatelessWidget {
+  const BE({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PS extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Partido Socialista', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+        title: Center(child: Text('Bloco de Esquerda', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -133,7 +133,7 @@ class PS extends StatelessWidget {
             height: 450,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/70349639/1707244508/1080x360'), // Path to your banner image
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/891843119238565888/1707841573/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Partido Socialista',
+                          'Bloco de Esquerda',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'PS',
+                          'BE',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class PS extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O Partido Socialista Português (PS) é um partido político de centro-esquerda em Portugal. Fundado após a Revolução dos Cravos em 1974, o PS promove princípios sociais-democratas e políticas progressistas. Defende a justiça social, igualdade de oportunidades e um Estado de bem-estar social. Alternando-se no poder com o PSD, seu principal rival, o PS tem influenciado significativamente as políticas portuguesas desde então. Liderado por uma direção nacional eleita democraticamente, o partido desempenha um papel fundamental na política portuguesa.',
+                      'O Bloco de Esquerda (BE) é um partido político português fundado em 1999, caracterizado por uma plataforma de esquerda progressista. Defende políticas sociais inclusivas, direitos laborais, igualdade de género, proteção ambiental e justiça social. O BE é conhecido por sua postura antiausteridade e pela defesa de uma economia mais equitativa e sustentável. Com representação na Assembleia da República e em diversos municípios, o BE é uma força relevante no panorama político português, exercendo influência significativa na formulação de políticas públicas.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class PS extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Reforço do Sistema de Saúde: Investimento em infraestrutura, equipamentos e pessoal para garantir acesso universal e qualidade nos cuidados de saúde."),
+                    Proposal(number: "1.",text: "Redistribuição de Renda: Aumento dos impostos para os mais ricos e criação de programas de redistribuição de renda para combater a desigualdade."),
 
-                    Proposal(number: "2.",text: "Promoção da Educação Inclusiva: Implementação de medidas para garantir educação de qualidade para todos, com foco na inclusão e igualdade de oportunidades."),
+                    Proposal(number: "2.",text: "Proteção dos Direitos dos Trabalhadores: Reforço dos direitos laborais e combate à precariedade no trabalho."),
 
-                    Proposal(number: "3.",text: "Impulso à Economia Verde: Estímulo a setores sustentáveis, incentivando energias renováveis e práticas ambientalmente responsáveis."),
+                    Proposal(number: "3.",text: "Habitação Acessível: Implementação de políticas de habitação pública e combate à especulação imobiliária."),
 
-                    Proposal(number: "4.",text: "Combate à Pobreza e Desigualdade: Implementação de políticas sociais para reduzir a pobreza e a desigualdade, através de programas de apoio e redistribuição de renda."),
+                    Proposal(number: "4.",text: "Educação Pública de Qualidade: Investimento na educação pública, redução do número de alunos por turma e valorização dos professores."),
 
-                    Proposal(number: "5.",text: "Reforma do Sistema Fiscal: Adoção de medidas para tornar o sistema fiscal mais justo e progressivo, combatendo a evasão fiscal e taxando mais os mais ricos."),
+                    Proposal(number: "5.",text: "Saúde Universal e Gratuita: Reforço do Serviço Nacional de Saúde (SNS) e acesso gratuito a todos os cuidados de saúde."),
 
-                    Proposal(number: "6.",text: "Fortalecimento dos Direitos Laborais: Proteção e valorização dos direitos dos trabalhadores, promovendo condições laborais dignas e seguras."),
+                    Proposal(number: "6.",text: "Combate às Alterações Climáticas: Adoção de medidas para reduzir as emissões de carbono e promover a transição para energias renováveis."),
 
-                    Proposal(number: "7.",text: "Investimento em Infraestrutura: Modernização e expansão da infraestrutura pública, com foco em transporte, habitação e comunicações."),
+                    Proposal(number: "7.",text: "Igualdade de Género: Promoção da igualdade salarial, combate à violência de género e garantia de direitos reprodutivos."),
 
-                    Proposal(number: "8.",text: "Reforma da Justiça: Melhoria do sistema judicial para garantir maior eficiência, transparência e acesso igualitário à justiça."),
+                    Proposal(number: "8.",text: "Descentralização Administrativa: Transferência de mais competências para as autarquias locais e reforço do poder local."),
 
-                    Proposal(number: "9.",text: "Promoção da Cultura e Artes: Apoio ao setor cultural e artístico, incentivando a produção e acesso à cultura em todas as suas formas."),
+                    Proposal(number: "9.",text: "Democratização dos Meios de Comunicação: Combate à concentração de meios de comunicação e promoção da diversidade de opiniões."),
 
-                    Proposal(number: "10.",text: "Reforço da Democracia Participativa: Promoção de mecanismos de participação cidadã e transparência na governança, fortalecendo a democracia e o envolvimento da sociedade civil."),
+                    Proposal(number: "10.",text: "Paz e Solidariedade Internacional: Apoio à resolução pacífica de conflitos internacionais e solidariedade com povos em luta pela autodeterminação e justiça social."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://ps.pt/');
+                        _launchURL('https://www.bloco.org/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',
