@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
+import 'package:nova_politica/pages/PartidoSocialista.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:nova_politica/pages/partidos/PartidoSocialista.dart';
 
