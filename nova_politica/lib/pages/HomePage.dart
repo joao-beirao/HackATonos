@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
+import 'package:nova_politica/pages/ForumPage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -28,8 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
             toolbarHeight: 100,
             title: Center(
                 child: Text('Nova Política',
-                    style: GoogleFonts.lobster(
-                        textStyle: const TextStyle(fontSize: 40)))),
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
           ),
           drawer: Drawer(
             child: SingleChildScrollView(
@@ -116,7 +116,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         leading: const Icon(Icons.forum_outlined),
                         title: const Text('Forum'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ForumPage(),
+                            ),
+                          );
                         },
                       )
                     ],
