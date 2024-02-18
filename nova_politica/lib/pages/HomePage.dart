@@ -12,7 +12,7 @@ import 'GuidePage.dart';
 import 'PoliticalPartiesPage.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -21,12 +21,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   bool isLoggedIn = false; // Initially not logged in
 
-  void updateLoginStatus() {
+  void updateLoginStatus(bool status) {
     setState(() {
-      isLoggedIn = true;
+      isLoggedIn = status;
     });
   }
 
@@ -38,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Color.fromARGB(255, 228, 228, 228),
         title: Center(child: Text('Nova Política', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
-          if (!isLoggedIn) // Only show login and register buttons if not logged in
+          if (!isLoggedIn)
             Row(
               children: [
                 TextButton(
@@ -46,11 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => LoginScreen(onLoginSuccess: updateLoginStatus),
+                        builder: (_) => LoginScreen(
+                            onLoginSuccess: (status) {
+                              updateLoginStatus(status);
+                            }),
                       ),
                     );
                   },
-                  child: const Text('Log In', style: TextStyle(color: Colors.black)),
+                  child:
+                      const Text('Log In', style: TextStyle(color: Colors.black)),
                 ),
                 TextButton(
                   onPressed: () {
@@ -61,14 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     );
                   },
-                  child: const Text('Register', style: TextStyle(color: Colors.black)),
+                  child: const Text('Register',
+                      style: TextStyle(color: Colors.black)),
                 )
               ],
             ),
         ],
       ),
-
-
           drawer: Drawer(
             child: SingleChildScrollView(
               child: Column(
