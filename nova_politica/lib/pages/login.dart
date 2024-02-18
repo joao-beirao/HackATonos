@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:nova_politica/pages/LoginSuccessful.dart';
 import 'globals.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -20,7 +21,12 @@ class LoginScreen extends StatelessWidget {
       onLoginSuccess();
       userEmail = emailController.text;
       // Navigate back to the previous screen
-      Navigator.of(context).pop();
+      Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => LoginSuccessful(),
+      ),
+    );
     } catch (e) {
       // Show a pop-up dialog with the error message
       showDialog(
