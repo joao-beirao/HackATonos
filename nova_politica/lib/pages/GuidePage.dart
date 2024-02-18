@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nova_politica/pages/ForumPage.dart';
+import 'package:nova_politica/pages/PoliticalPartiesPage.dart';
 import 'ContactPage.dart';
 import 'AboutPage.dart';
 import 'HomePage.dart';
@@ -32,7 +34,7 @@ class MyGuide extends StatelessWidget {
                       style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
             ),
 
-                      drawer: Drawer(
+          drawer: Drawer(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -75,17 +77,19 @@ class MyGuide extends StatelessWidget {
                         leading: const Icon(Icons.home_outlined),
                         title: const Text('Início'),
                         onTap: () {
-                          Navigator.push(
+                            Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const MyHomePage(title: 'Nova Política'),
+                              builder: (_) => const MyHomePage(title: 'Nova Política',),
                             ),
-                          );},
+                          );
+                        },
                       ),
                       ListTile(
                         leading: const Icon(Icons.menu_book_outlined),
                         title: const Text('Guia para Iniciantes'),
                         onTap: () {
+
                         },
                       ),
                       ListTile(
@@ -100,11 +104,29 @@ class MyGuide extends StatelessWidget {
                           );
                         },
                       ),
+                      // !!!ERRO!!! - Após iniciar o quiz, voltando para trás, já não é possível ver o menu dos partidos!
+                      ListTile(
+                        leading: const Icon(Icons.group_outlined),
+                        title: const Text('Partidos'),
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyPartiesApp(),
+                            ),
+                          );
+                        },
+                      ),
                       ListTile(
                         leading: const Icon(Icons.forum_outlined),
                         title: const Text('Forum'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ForumPage(),
+                            ),
+                          );
                         },
                       )
                     ],

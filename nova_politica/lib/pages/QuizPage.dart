@@ -1,6 +1,8 @@
  import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nova_politica/main.dart';
+import 'package:nova_politica/pages/ForumPage.dart';
+import 'package:nova_politica/pages/HomePage.dart';
 import 'GuidePage.dart';
 import 'PoliticalPartiesPage.dart';
 import 'result.dart';
@@ -276,7 +278,7 @@ class _MyQuizAppState extends State<MyQuizApp> {
               child: Text('Quiz',
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         ),
-         drawer: Drawer(
+          drawer: Drawer(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -319,10 +321,10 @@ class _MyQuizAppState extends State<MyQuizApp> {
                         leading: const Icon(Icons.home_outlined),
                         title: const Text('Início'),
                         onTap: () {
-                          Navigator.push(
+                            Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) =>  MyApp(),
+                              builder: (_) => const MyHomePage(title: 'Nova Política',),
                             ),
                           );
                         },
@@ -343,8 +345,10 @@ class _MyQuizAppState extends State<MyQuizApp> {
                         leading: const Icon(Icons.quiz_outlined),
                         title: const Text('Quiz'),
                         onTap: () {
+
                         },
                       ),
+                      // !!!ERRO!!! - Após iniciar o quiz, voltando para trás, já não é possível ver o menu dos partidos!
                       ListTile(
                         leading: const Icon(Icons.group_outlined),
                         title: const Text('Partidos'),
@@ -361,7 +365,12 @@ class _MyQuizAppState extends State<MyQuizApp> {
                         leading: const Icon(Icons.forum_outlined),
                         title: const Text('Forum'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ForumPage(),
+                            ),
+                          );
                         },
                       )
                     ],
