@@ -29,60 +29,76 @@ class RegistrationScreen extends StatelessWidget {
     }
   }
 
-  void validateAndRegister(BuildContext context) {
-    String email = emailController.text.trim();
-    String password = passwordController.text;
+void validateAndRegister(BuildContext context) {
+  String email = emailController.text.trim();
+  String password = passwordController.text;
 
-    // Email validation
-    if (!isValidEmail(email)) {
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('Invalid Email'),
-            content: Text('Please insert a valid email address.'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text('OK'),
-              ),
-            ],
-          );
-        },
-      );
-      return;
-    }
-
-    // Password validation
-    if (password.length < 6) {
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('Invalid Password'),
-            content: Text('The password must be at least 6 characters long.'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text('OK'),
-              ),
-            ],
-          );
-        },
-      );
-      return;
-    }
-
-    // If both email and password are valid, proceed with registration
-    registerWithEmailAndPassword(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => const MySuccessfulRegist(),
-      ),
+  // Email validation
+  if (!isValidEmail(email)) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Invalid Email'),
+          content: Text('Please insert a valid email address.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
     );
     return;
   }
+
+  // Password validation
+  if (password.length < 6) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Invalid Password'),
+          content: Text('The password must be at least 6 characters long.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+    return;
+  }
+
+  // If both email and password are valid, proceed with registration
+  register(context);
+}
+
+void register(BuildContext context) async {
+  try {
+    UserCredential userCredential =
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+    // User registered successfully, navigate to the successful registration screen
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => MySuccessfulRegist(),
+      ),
+    );
+  } catch (e) {
+    // Show an error message if registration fails
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Failed to register: $e')),
+    );
+  }
+}
+
 
   bool isValidEmail(String email) {
     // Basic email validation using a regular expression
