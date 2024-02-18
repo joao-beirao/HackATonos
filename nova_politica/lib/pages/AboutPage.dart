@@ -124,7 +124,11 @@ class MyAboutPage extends StatelessWidget {
               ),
             ),
           ),
-          body: Column(children: [
+          body: Center(
+        child: Container(
+          color: Colors.white,
+          width: 800,
+          child:Column(children: [
             SizedBox(
                 height: 24,
             ),
@@ -138,7 +142,7 @@ class MyAboutPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           ]
-      )
+      )))
     ));
   }
 }
