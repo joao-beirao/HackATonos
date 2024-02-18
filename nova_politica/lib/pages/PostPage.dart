@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/ForumPage.dart';
-import 'package:nova_politica/pages/globals.dart';
 
 class PostDetailsPage extends StatelessWidget {
   final Post post;
@@ -28,7 +27,7 @@ class PostDetailsPage extends StatelessWidget {
                   .collection('posts')
                   .doc(post.id)
                   .collection('replies')
-                  .orderBy('timestamp') // Sort replies by timestamp in ascending order
+                  .orderBy('timestamp', descending: true) // Sort replies by timestamp in descending order
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -38,7 +37,14 @@ class PostDetailsPage extends StatelessWidget {
                 } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
                   return Center(child: Text('No replies yet!'));
                 } else {
-                  List<Widget> replyWidgets = snapshot.data!.docs.map((doc) {
+                  List<QueryDocumentSnapshot> sortedReplies = snapshot.data!.docs;
+                  sortedReplies.sort((a, b) {
+                    Timestamp aTimestamp = a['timestamp'];
+                    Timestamp bTimestamp = b['timestamp'];
+                    return bTimestamp.compareTo(aTimestamp);
+                  });
+
+                  List<Widget> replyWidgets = sortedReplies.map((doc) {
                     return ListTile(
                       title: Text(doc['username']),
                       subtitle: Text(doc['content']),
@@ -73,7 +79,7 @@ class PostDetailsPage extends StatelessWidget {
                           .doc(post.id)
                           .collection('replies')
                           .add({
-                        'username': '$userEmail', // Replace with actual username/email
+                        'username': 'user@example.com', // Replace with actual username/email
                         'content': content,
                         'timestamp': Timestamp.now(), // Add timestamp for sorting
                       });
