@@ -59,17 +59,19 @@ class MySuccessfulRegist extends StatelessWidget {
                       child: Image.network(
                           'https://media.discordapp.net/attachments/1171195359947657278/1208485478760976384/Pinguim_Politico.png?ex=65e374ce&is=65d0ffce&hm=be0de54d36bc75e78432e5694b0280035ce30fcb6cee83e02474156d6d863397&=&format=webp&quality=lossless&width=662&height=662')),
                   Container(
-                    child: 
-                  TextButton(
+                      child: TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const MyHomePage(title: 'Nova Política',),
+                          builder: (_) => const MyHomePage(
+                            title: 'Nova Política',
+                          ),
                         ),
                       );
                     },
-                    child: const Text('Ir para a Página Principal', style: TextStyle(fontSize: 30.0, color: Colors.black) ),
+                    child: const Text('Ir para a Página Principal',
+                        style: TextStyle(fontSize: 30.0, color: Colors.black)),
                   ))
                 ]),
               ),
