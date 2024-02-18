@@ -224,6 +224,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               
+                  Center(child: Container(
+                    width: 800,
+                    child:Center(child:Text(
+                      'Últimas Notícias',
+                      style: TextStyle(fontSize: 40),
+                      ),),
+                    ),
+                  ),
+
               Center(child:News1(),),
               Container(height: 30,),
               Center(child:News2(),),
