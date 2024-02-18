@@ -123,6 +123,7 @@ void register(BuildContext context) async {
                 ),
                 SizedBox(height: 16), // Added spacing below email field
                 TextFormField(
+                  obscureText: true,
                   controller: passwordController,
                   decoration: InputDecoration(labelText: 'Password'),
                 ),
