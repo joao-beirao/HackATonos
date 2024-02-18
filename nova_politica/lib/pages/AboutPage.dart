@@ -18,7 +18,21 @@ class MyAboutPage extends StatelessWidget {
           backgroundColor: Colors.red,
           title: const Text('Sobre Nós'), 
           ),
+          body: Column(children: [
+            SizedBox(
+                height: 24,
+            ),
+            const Text(
+            'A plataforma Nova Política apresenta o mundo político português de uma forma simples, intuitiva e agradável, tornando passar a perceber de política um processo rápido. Não aceitamos doações porque somos extremamente humildes, o prémio de primeiro lugar do HackaThon é pagamento que chegue.',
+            style: (TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              decoration: TextDecoration.none,)),
+            textAlign: TextAlign.center,
+          ),
+          ]
       )
-    );
+    ));
   }
 }
