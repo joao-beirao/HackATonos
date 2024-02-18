@@ -8,6 +8,7 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:nova_politica/pages/login.dart';
 import 'package:nova_politica/pages/registration.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'ForumPage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -147,7 +148,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         leading: const Icon(Icons.forum_outlined),
                         title: const Text('Forum'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ForumPage(),
+                            ),
+                          );
                         },
                       )
                     ],
