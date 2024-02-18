@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
+import 'package:nova_politica/pages/ForumPage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
