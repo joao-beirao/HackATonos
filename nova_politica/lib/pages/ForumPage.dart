@@ -39,6 +39,7 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor: Color.fromARGB(255, 177, 166, 255),
             appBar: AppBar(
               toolbarHeight: 100,
               backgroundColor: Color.fromARGB(255, 177, 166, 255),
@@ -148,54 +149,58 @@ class ForumPage extends StatelessWidget {
               ),
             ),
           ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
-            return Center(child: Text('No posts yet!'));
-          } else {
-            List<Post> posts = snapshot.data!.docs.map((doc) {
-              return Post(
-                doc.id,
-                doc['username'],
-                doc['title'],
-                doc['content'],
-              );
-            }).toList();
-            return ListView.builder(
-              itemCount: posts.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(posts[index].title),
-                  subtitle: Text(posts[index].content),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PostDetailsPage(post: posts[index]),
-                      ),
-                    );
-                  },
+      body: Center(child:Container(
+          color: Colors.white,
+          width: 800,
+        child:StreamBuilder<QuerySnapshot>(
+          stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(child: Text('Error: ${snapshot.error}'));
+            } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
+              return Center(child: Text('No posts yet!'));
+            } else {
+              List<Post> posts = snapshot.data!.docs.map((doc) {
+                return Post(
+                  doc.id,
+                  doc['username'],
+                  doc['title'],
+                  doc['content'],
                 );
-              },
+              }).toList();
+              return ListView.builder(
+                itemCount: posts.length,
+                itemBuilder: (context, index) {
+                  return Column(children: [ListTile(
+                    title: Text(posts[index].title),
+                    subtitle: Text(posts[index].content),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PostDetailsPage(post: posts[index]),
+                        ),
+                      );
+                    },
+                  ),
+                  Divider(),]);
+                },
+              );
+            }
+          },
+        ),),),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CreatePostPage()),
             );
-          }
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => CreatePostPage()),
-          );
-        },
-        child: Icon(Icons.add),
-      ),
-    );
+          },
+          child: Icon(Icons.add),
+        ),
+      );
   }
 }
 
@@ -208,10 +213,19 @@ class PostDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Post Details'),
-      ),
-      body: Column(
+            backgroundColor: Color.fromARGB(255, 177, 166, 255),
+            appBar: AppBar(
+              toolbarHeight: 100,
+              backgroundColor: Color.fromARGB(255, 177, 166, 255),
+              title: Center(
+                  child: Text('Forum',
+                      style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+            ),
+      body: Center(child:
+      Container(
+        color: Colors.white,
+        width: 800,
+        child:Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
@@ -281,7 +295,7 @@ class PostDetailsPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ),),),
     );
   }
 }
@@ -294,10 +308,19 @@ class CreatePostPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Create Post'),
-      ),
-      body: Padding(
+            backgroundColor: Color.fromARGB(255, 177, 166, 255),
+            appBar: AppBar(
+              toolbarHeight: 100,
+              backgroundColor: Color.fromARGB(255, 177, 166, 255),
+              title: Center(
+                  child: Text('Forum',
+                      style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+            ),
+      body: Center(child:
+      Container(
+        color: Colors.white,
+        width: 800,
+        child:Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -333,7 +356,7 @@ class CreatePostPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ),),),
     );
   }
 }
