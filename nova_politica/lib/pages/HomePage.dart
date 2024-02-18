@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/AboutPage.dart';
 import 'package:nova_politica/pages/ForumPage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
+import 'package:nova_politica/pages/login.dart';
+import 'package:nova_politica/pages/registration.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'ContactPage.dart';
@@ -19,18 +21,53 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  bool isLoggedIn = false; // Initially not logged in
+
+  void updateLoginStatus() {
+    setState(() {
+      isLoggedIn = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Nova Politica',
-        home: Scaffold(
-          appBar: AppBar(
-            toolbarHeight: 100,
-            title: Center(
-                child: Text('Nova Política',
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 100,
+        title: Center(child: Text('Nova Política', style: GoogleFonts.lobster(textStyle: const TextStyle(fontSize: 40)))),
+        actions: <Widget>[
+          if (!isLoggedIn) // Only show login and register buttons if not logged in
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => LoginScreen(onLoginSuccess: updateLoginStatus),
+                      ),
+                    );
+                  },
+                  child: const Text('Log In', style: TextStyle(color: Colors.black)),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => RegistrationScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Register', style: TextStyle(color: Colors.black)),
+                )
+              ],
+            ),
+        ],
+      ),
+
+
           drawer: Drawer(
             child: SingleChildScrollView(
               child: Column(
@@ -169,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://www.example.com');
+                        _launchURL('https://sondagens-ics-ul.iscte-iul.pt/2024/02/02/sondagem-janeiro-fevereiro-de-2024-para-sic-expresso/');
                       },
                       child: const Text(
                         'Saber Mais',
@@ -228,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ))
             ],
           ),
-        ));
+        );
   }
 
 
