@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: Center(child: Text('Nova Política', style: GoogleFonts.lobster(textStyle: const TextStyle(fontSize: 40)))),
+        title: Center(child: Text('Nova Política', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
           if (!isLoggedIn) // Only show login and register buttons if not logged in
             Row(
@@ -293,8 +293,9 @@ class News1 extends StatelessWidget {
             child: Container( 
       height: 270,
       width: 680,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 12, 62)
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62),
+        borderRadius: BorderRadius.circular(10), // Adjust the value for roundness
       )
     ,
       child: Row(children:[
@@ -329,8 +330,11 @@ class News2 extends StatelessWidget {
       child: Container( 
       height: 270,
       width: 680,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 12, 62)
+      decoration: BoxDecoration(
+        
+        color: Color.fromARGB(255, 0, 12, 62),
+        borderRadius: BorderRadius.circular(10), // Adjust the value for roundness
+
       )
     ,
       child: Row(children:[
@@ -359,8 +363,10 @@ class News3 extends StatelessWidget {
             child: Container( 
       height: 270,
       width: 680,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 12, 62)
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62),
+        borderRadius: BorderRadius.circular(10), // Adjust the value for roundness
+
       )
     ,
       child: Row(children:[
