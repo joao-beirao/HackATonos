@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: Center(child: Text('Nova Política', style: GoogleFonts.lobster(textStyle: const TextStyle(fontSize: 40)))),
+        title: Center(child: Text('Nova Política', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
           if (!isLoggedIn) // Only show login and register buttons if not logged in
             Row(
