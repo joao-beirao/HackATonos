@@ -236,6 +236,8 @@ class PostDetailsPage extends StatelessWidget {
                 title: Text(post.title),
                 subtitle: Text(post.content),
               ),
+              Divider(), // Add a separator here
+
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
