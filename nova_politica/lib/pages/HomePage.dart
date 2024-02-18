@@ -110,7 +110,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       ListTile(
                         leading: const Icon(Icons.home_outlined),
                         title: const Text('Início'),
-                        onTap: () {},
+                        onTap: () {
+                        },
                       ),
                       ListTile(
                         leading: const Icon(Icons.menu_book_outlined),

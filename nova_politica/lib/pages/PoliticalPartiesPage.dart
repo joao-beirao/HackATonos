@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nova_politica/pages/ForumPage.dart';
 import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
 import 'package:nova_politica/pages/PartidoSocialista.dart';
@@ -73,12 +74,13 @@ class MyPartiesApp extends StatelessWidget {
                         leading: const Icon(Icons.home_outlined),
                         title: const Text('Início'),
                         onTap: () {
-                          Navigator.push(
+                            Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const MyHomePage(title: 'Nova Política'),
+                              builder: (_) => const MyHomePage(title: 'Nova Política',),
                             ),
-                          );},
+                          );
+                        },
                       ),
                       ListTile(
                         leading: const Icon(Icons.menu_book_outlined),
@@ -104,18 +106,23 @@ class MyPartiesApp extends StatelessWidget {
                           );
                         },
                       ),
+                      // !!!ERRO!!! - Após iniciar o quiz, voltando para trás, já não é possível ver o menu dos partidos!
                       ListTile(
                         leading: const Icon(Icons.group_outlined),
                         title: const Text('Partidos'),
-                        onTap: () {
-                          
+                        onTap: (){
                         },
                       ),
                       ListTile(
                         leading: const Icon(Icons.forum_outlined),
                         title: const Text('Forum'),
                         onTap: () {
-                          //COLOCAR HIPERLIGAÇÃO
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ForumPage(),
+                            ),
+                          );
                         },
                       )
                     ],
