@@ -28,8 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
             toolbarHeight: 100,
             title: Center(
                 child: Text('Nova Política',
-                    style: GoogleFonts.lobster(
-                        textStyle: const TextStyle(fontSize: 40)))),
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
           ),
           drawer: Drawer(
             child: SingleChildScrollView(

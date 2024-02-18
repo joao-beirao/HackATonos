@@ -274,8 +274,7 @@ class _MyQuizAppState extends State<MyQuizApp> {
           toolbarHeight: 100,
           title: Center(
               child: Text('Quiz',
-                  style: GoogleFonts.lobster(
-                      textStyle: const TextStyle(fontSize: 50)))),
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         ),
          drawer: Drawer(
             child: SingleChildScrollView(

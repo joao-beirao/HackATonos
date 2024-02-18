@@ -29,8 +29,7 @@ class MyGuide extends StatelessWidget {
               backgroundColor: Colors.orange.withOpacity(0.7),
               title: Center(
                   child: Text('Guia para Iniciantes',
-                      style: GoogleFonts.lobster(
-                          textStyle: const TextStyle(fontSize: 40)))),
+                      style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
             ),
 
                       drawer: Drawer(
