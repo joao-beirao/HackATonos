@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:nova_politica/pages/GuidePage.dart';
+import 'package:nova_politica/pages/HomePage.dart';
+import 'package:nova_politica/pages/PoliticalPartiesPage.dart';
+import 'package:nova_politica/pages/QuizPage.dart';
 import 'PostPage.dart';
 
 // Define a Post model to represent each post
@@ -33,9 +37,115 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Forum Page'),
-      ),
+            appBar: AppBar(
+              toolbarHeight: 100,
+              backgroundColor: Color.fromARGB(255, 177, 166, 255),
+              title: Center(
+                  child: Text('Forum',
+                      style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+            ),
+            
+          drawer: Drawer(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Material(
+                    color: Colors.grey,
+                    child: InkWell(
+                      onTap: () {
+                        //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 24, bottom: 50),
+                        child: const Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 50,
+                              backgroundImage: NetworkImage(''),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              'João',
+                              style:
+                                  TextStyle(fontSize: 28, color: Colors.white),
+                            ),
+                            Text(
+                              'joao@gmail.com',
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      ListTile(
+                        leading: const Icon(Icons.home_outlined),
+                        title: const Text('Início'),
+                        onTap: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyHomePage(title: 'Nova Política',),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.menu_book_outlined),
+                        title: const Text('Guia para Iniciantes'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyGuide(),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.quiz_outlined),
+                        title: const Text('Quiz'),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyQuizApp(),
+                            ),
+                          );
+                        },
+                      ),
+                      // !!!ERRO!!! - Após iniciar o quiz, voltando para trás, já não é possível ver o menu dos partidos!
+                      ListTile(
+                        leading: const Icon(Icons.group_outlined),
+                        title: const Text('Partidos'),
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyPartiesApp(),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.forum_outlined),
+                        title: const Text('Forum'),
+                        onTap: () {
+
+                        },
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('posts').snapshots(),
         builder: (context, snapshot) {
