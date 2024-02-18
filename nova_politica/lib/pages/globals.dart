@@ -1,4 +1,4 @@
 // globals.dart
 
 bool isLoggedIn = false;
-String userEmail = '';
+String userEmail = 'Guest';

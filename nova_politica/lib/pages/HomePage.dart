@@ -13,7 +13,7 @@ import 'PoliticalPartiesPage.dart';
 import 'globals.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -22,9 +22,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-// Initially not logged in
-
   void updateLoginStatus() {
     setState(() {
       isLoggedIn = true;
@@ -36,7 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: Center(child: Text('Nova Política', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+        title: Center(
+            child: Text('Nova Política',
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
           if (!isLoggedIn) // Only show login and register buttons if not logged in
             Row(
@@ -50,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     );
                   },
-                  child: const Text('Log In', style: TextStyle(color: Colors.black)),
+                  child: Text('Log In', style: TextStyle(color: Colors.black)),
                 ),
                 TextButton(
                   onPressed: () {
@@ -61,46 +60,39 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     );
                   },
-                  child: const Text('Register', style: TextStyle(color: Colors.black)),
+                  child: Text('Register', style: TextStyle(color: Colors.black)),
                 )
               ],
             ),
         ],
       ),
-
-
-          drawer: Drawer(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Material(
-                    color: Colors.grey,
-                    child: InkWell(
-                      onTap: () {
-                        //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.only(top: 24, bottom: 50),
-                        child: const Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 50,
-                              backgroundImage: NetworkImage(''),
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Text(
-                              'João',
-                              style:
-                                  TextStyle(fontSize: 28, color: Colors.white),
-                            ),
-                            Text(
-                              'joao@gmail.com',
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white),
-                            ),
+      drawer: Drawer(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Material(
+                color: Colors.grey,
+                child: InkWell(
+                  onTap: () {
+                    //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.only(top: 24, bottom: 50),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 50,
+                          backgroundImage: NetworkImage(''),
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        // Removed const from here
+                        Text(
+                          userEmail,
+                          style: TextStyle(fontSize: 14, color: Colors.white),
+                        ),
                           ],
                         ),
                       ),
