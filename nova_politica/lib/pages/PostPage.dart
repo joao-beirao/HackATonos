@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nova_politica/pages/ForumPage.dart';
-import 'package:nova_politica/pages/globals.dart';
 
 class PostDetailsPage extends StatelessWidget {
   final Post post;
   final TextEditingController _replyController = TextEditingController();
 
-  PostDetailsPage({super.key, required this.post});
+  PostDetailsPage({Key? key, required this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class PostDetailsPage extends StatelessWidget {
                   .collection('posts')
                   .doc(post.id)
                   .collection('replies')
-                  .orderBy('timestamp', descending: true) // Sort replies by timestamp in descending order
+                  .orderBy('timestamp', descending: false) // Sort replies by timestamp in ascending order
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -38,11 +37,11 @@ class PostDetailsPage extends StatelessWidget {
                 } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
                   return Center(child: Text('No replies yet!'));
                 } else {
-                  List<QueryDocumentSnapshot> sortedReplies = snapshot.data!.docs;
+                  List<DocumentSnapshot> sortedReplies = snapshot.data!.docs;
                   sortedReplies.sort((a, b) {
                     Timestamp aTimestamp = a['timestamp'];
                     Timestamp bTimestamp = b['timestamp'];
-                    return bTimestamp.compareTo(aTimestamp);
+                    return aTimestamp.compareTo(bTimestamp);
                   });
 
                   List<Widget> replyWidgets = sortedReplies.map((doc) {
@@ -80,7 +79,7 @@ class PostDetailsPage extends StatelessWidget {
                           .doc(post.id)
                           .collection('replies')
                           .add({
-                        'username': '$userEmail', // Replace with actual username/email
+                        'username': 'user@example.com', // Replace with actual username/email
                         'content': content,
                         'timestamp': Timestamp.now(), // Add timestamp for sorting
                       });
