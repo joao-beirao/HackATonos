@@ -73,22 +73,14 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Material(
                 color: Colors.grey,
-                child: InkWell(
-                  onTap: () {
-                    //COLOCAR AQUI O QUE FAZER QUANDO SE CLICA NA IMAGEM DA PESSOA
-                  },
                   child: Container(
                     padding: const EdgeInsets.only(top: 24, bottom: 50),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 50,
-                          backgroundImage: NetworkImage(''),
-                        ),
+                        Icon(Icons.person,size: 80,color: Colors.white,),                        
                         SizedBox(
                           height: 12,
                         ),
-                        // Removed const from here
                         Text(
                           userEmail,
                           style: TextStyle(fontSize: 14, color: Colors.white),
@@ -97,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     ),
-                  ),
                   Column(
                     children: [
                       ListTile(
