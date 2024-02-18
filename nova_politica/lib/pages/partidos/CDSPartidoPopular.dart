@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,33,35,84);
+const Color MAIN_COLOR = Color.fromARGB(255,238,120,10);
 
-class CH extends StatelessWidget {
-  const CH({super .key});
+class CDS extends StatelessWidget {
+  const CDS({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CH extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Chega', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white))),
+        title: Center(child: Text('CDS Partido Popular', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -133,7 +133,7 @@ class CH extends StatelessWidget {
             height: 450,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/1070088307894349825/1701104163/1080x360'), // Path to your banner image
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/19334929/1706111519/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Chega',
+                          'CDS Partido Popular',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'CH',
+                          'CDS-PP',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O partido político português Chega foi fundado em 2019, apresentando-se como uma alternativa de direita no cenário político do país. Sua plataforma é caracterizada por uma postura nacionalista, conservadora e anti-sistema, com ênfase em questões como segurança, imigração e identidade cultural. Liderado por André Ventura, o partido tem suscitado controvérsias devido a posicionamentos considerados polêmicos e radicais por alguns setores da sociedade portuguesa.',
+                      'O Centro Democrático Social - Partido Popular (CDS-PP) é um partido político português de centro-direita, fundado em 1974. Defende princípios conservadores e democrata-cristãos, promovendo valores como a família, a liberdade económica e a subsidiariedade. Tradicionalmente, tem sido um partido defensor da iniciativa privada, da economia de mercado e dos valores sociais conservadores. O CDS-PP tem uma presença significativa na política portuguesa, participando em várias coligações governamentais e contribuindo para a formulação de políticas públicas em Portugal.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class CH extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Fortalecimento da Segurança Pública: Aumento do efetivo policial, investimento em tecnologia e medidas mais severas contra o crime e a violência."),
+                    Proposal(number: "1.",text: "Reforma Fiscal Responsável: Redução de impostos para famílias e empresas, incentivando o crescimento económico."),
 
-                    Proposal(number: "2.",text: "Controle Rigoroso da Imigração: Restrição da entrada de imigrantes ilegais e revisão dos critérios de concessão de visto para proteger os interesses nacionais."),
+                    Proposal(number: "2.",text: "Fortalecimento da Segurança Pública: Aumento do efetivo policial e investimento em tecnologia para combater a criminalidade."),
 
-                    Proposal(number: "3.",text: "Promoção dos Valores Tradicionais: Apoio à família tradicional, defesa da moralidade e dos princípios cristãos na sociedade."),
+                    Proposal(number: "3.",text: "Apoio à Iniciativa Privada: Incentivos fiscais e desregulamentação para estimular o empreendedorismo e a criação de empregos."),
 
-                    Proposal(number: "4.",text: "Redução da Burocracia e do Estado: Simplificação de processos administrativos e diminuição da intervenção estatal na economia e na vida dos cidadãos."),
+                    Proposal(number: "4.",text: "Educação de Qualidade: Promoção da excelência académica e valorização dos professores."),
 
-                    Proposal(number: "5.",text: "Combate à Corrupção: Implementação de medidas rigorosas contra a corrupção e a impunidade, promovendo a transparência e a integridade na gestão pública."),
+                    Proposal(number: "5.",text: "Proteção da Família: Apoio às políticas de família e medidas de conciliação trabalho-família."),
 
-                    Proposal(number: "6.",text: "Defesa da Soberania Nacional: Proteção dos interesses de Portugal perante organizações internacionais e fortalecimento das relações bilaterais com outros países."),
+                    Proposal(number: "6.",text: "Saúde Eficiente: Modernização do sistema de saúde e redução dos tempos de espera."),
 
-                    Proposal(number: "7.",text: "Valorização da Cultura Portuguesa: Promoção e preservação da identidade cultural nacional, incentivando o conhecimento e o orgulho da história e das tradições portuguesas."),
+                    Proposal(number: "7.",text: "Defesa da Soberania Nacional: Fortalecimento das Forças Armadas e proteção dos interesses nacionais."),
 
-                    Proposal(number: "8.",text: "Reforma do Sistema de Saúde: Melhoria da qualidade e do acesso aos serviços de saúde, com investimento em infraestrutura e valorização dos profissionais de saúde."),
+                    Proposal(number: "8.",text: "Preservação dos Valores Tradicionais: Promoção da cultura e história portuguesas."),
 
-                    Proposal(number: "9.",text: "Estímulo à Economia Nacional: Incentivo ao empreendedorismo, redução de impostos para empresas e medidas de proteção da indústria nacional."),
+                    Proposal(number: "9.",text: "Reforço da Coesão Social: Combate à pobreza e exclusão social através de programas de apoio."),
 
-                    Proposal(number: "10.",text: "Educação de Qualidade: Modernização do sistema educativo, com ênfase no mérito e na excelência acadêmica, além de valorização dos professores e revisão dos currículos escolares."),
+                    Proposal(number: "10.",text: "Política Externa Pragmática: Parcerias internacionais baseadas nos interesses nacionais e no respeito pelos direitos humanos."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://partidochega.pt/');
+                        _launchURL('http://www.cds.pt/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',

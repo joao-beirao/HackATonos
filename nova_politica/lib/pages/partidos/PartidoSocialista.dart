@@ -19,7 +19,7 @@ class PS extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Partido Socialista', style: GoogleFonts.lobster(textStyle: const TextStyle(fontSize: 40)))),
+        title: Center(child: Text('Partido Socialista', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],

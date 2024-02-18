@@ -4,7 +4,15 @@ import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
 import 'package:nova_politica/pages/PartidoSocialista.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
+import 'package:nova_politica/pages/partidos/BlocoDeEsquerda.dart';
+import 'package:nova_politica/pages/partidos/CDSPartidoPopular.dart';
+import 'package:nova_politica/pages/partidos/Chega.dart';
+import 'package:nova_politica/pages/partidos/ColigacaoDemocraticaUnitaria.dart';
+import 'package:nova_politica/pages/partidos/IniciativaLiberal.dart';
+import 'package:nova_politica/pages/partidos/Livre.dart';
+import 'package:nova_politica/pages/partidos/PartidoSocialDemocrata.dart';
 import 'package:nova_politica/pages/partidos/PartidoSocialista.dart';
+import 'package:nova_politica/pages/partidos/PessoasAnimaisNatureza.dart';
 
 class MyPartiesApp extends StatelessWidget {
   const MyPartiesApp({super.key});
@@ -17,7 +25,7 @@ class MyPartiesApp extends StatelessWidget {
       home: Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: Center(child: Text('Partidos Políticos', style: GoogleFonts.lobster(textStyle: const TextStyle(fontSize: 40)))),
+        title: Center(child: Text('Partidos Políticos', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -128,7 +136,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const PAN(),
                           ),
                         );
                       },
@@ -137,7 +145,7 @@ class MyPartiesApp extends StatelessWidget {
                       backgroundImage: NetworkImage('https://cdn.discordapp.com/attachments/1208282567002820609/1208387005566951435/PAN.jpg?ex=65e31918&is=65d0a418&hm=0747f482ce3f489c7f0f99c1c26891c1e694b2d01d76a24ed45d4790c9a9ce91&'),
                     ),
                     ),
-                    Text('PESSOAS – ANIMAIS – NATUREZA'),
+                    Text('Pessoas Animais Natureza'),
                     Text('PAN')
                   ],
                 ),
@@ -148,7 +156,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const CDU(),
                           ),
                         );
                       },
@@ -168,7 +176,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const BE(),
                           ),
                         );
                       },
@@ -190,7 +198,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const L(),
                           ),
                         );
                       },
@@ -199,7 +207,7 @@ class MyPartiesApp extends StatelessWidget {
                       backgroundImage: NetworkImage('https://cdn.discordapp.com/attachments/1208282567002820609/1208386670010040340/L.png?ex=65e318c8&is=65d0a3c8&hm=42cb21e16a6cee53fdec0624166165e9c0b7d4d049de9200fdc6b419d0da4d5f&'),
                     ),
                     ),
-                    Text('LIVRE'),
+                    Text('Livre'),
                     Text('L')
                   ],
                 ),
@@ -249,7 +257,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const PSD(),
                           ),
                         );
                       },
@@ -271,7 +279,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const IL(),
                           ),
                         );
                       },
@@ -291,7 +299,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const CDS(),
                           ),
                         );
                       },
@@ -311,7 +319,7 @@ class MyPartiesApp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => const PartidoSocialista(),
+                            builder: (_) => const CH(),
                           ),
                         );
                       },
@@ -320,7 +328,7 @@ class MyPartiesApp extends StatelessWidget {
                       backgroundImage: NetworkImage('https://upload.wikimedia.org/wikipedia/pt/c/c4/S%C3%ADmbolo_principal_do_CHEGA.png'),
                     ),
                     ),
-                    Text('CHEGA'),
+                    Text('Chega'),
                     Text('CH')
                   ],
                 ),

@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,33,35,84);
+const Color MAIN_COLOR = Color.fromARGB(255,11,174,85);
 
-class CH extends StatelessWidget {
-  const CH({super .key});
+class PAN extends StatelessWidget {
+  const PAN({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CH extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Chega', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white))),
+        title: Center(child: Text('Pessoas Animais Natureza ', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -133,7 +133,7 @@ class CH extends StatelessWidget {
             height: 450,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/1070088307894349825/1701104163/1080x360'), // Path to your banner image
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/51714305/1707568899/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Chega',
+                          'Pessoas Animais Natureza',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'CH',
+                          'PAN',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O partido político português Chega foi fundado em 2019, apresentando-se como uma alternativa de direita no cenário político do país. Sua plataforma é caracterizada por uma postura nacionalista, conservadora e anti-sistema, com ênfase em questões como segurança, imigração e identidade cultural. Liderado por André Ventura, o partido tem suscitado controvérsias devido a posicionamentos considerados polêmicos e radicais por alguns setores da sociedade portuguesa.',
+                      'O Partido Pessoas-Animais-Natureza (PAN) é uma força política portuguesa fundada em 2009, com uma plataforma baseada na defesa dos direitos dos animais, proteção do meio ambiente e promoção do bem-estar humano. Considerado um partido de centro-esquerda, o PAN busca equilibrar as necessidades sociais, ambientais e econômicas através de políticas progressistas. Com uma abordagem inovadora, o PAN tem ganhado relevância no panorama político português, especialmente em questões relacionadas à sustentabilidade, proteção animal e justiça social.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class CH extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Fortalecimento da Segurança Pública: Aumento do efetivo policial, investimento em tecnologia e medidas mais severas contra o crime e a violência."),
+                    Proposal(number: "1.",text: "Bem-estar Animal: Reforço das leis de proteção animal, combate ao abandono e maus-tratos, e promoção da adoção responsável."),
 
-                    Proposal(number: "2.",text: "Controle Rigoroso da Imigração: Restrição da entrada de imigrantes ilegais e revisão dos critérios de concessão de visto para proteger os interesses nacionais."),
+                    Proposal(number: "2.",text: "Sustentabilidade Ambiental: Investimento em energias renováveis, proteção de ecossistemas naturais e redução do uso de plásticos."),
 
-                    Proposal(number: "3.",text: "Promoção dos Valores Tradicionais: Apoio à família tradicional, defesa da moralidade e dos princípios cristãos na sociedade."),
+                    Proposal(number: "3.",text: "Educação Ambiental nas Escolas: Integração de programas de sensibilização ambiental no currículo escolar."),
 
-                    Proposal(number: "4.",text: "Redução da Burocracia e do Estado: Simplificação de processos administrativos e diminuição da intervenção estatal na economia e na vida dos cidadãos."),
+                    Proposal(number: "4.",text: "Alimentação Sustentável: Promoção de dietas mais saudáveis e sustentáveis, incentivando o consumo de alimentos locais e orgânicos."),
 
-                    Proposal(number: "5.",text: "Combate à Corrupção: Implementação de medidas rigorosas contra a corrupção e a impunidade, promovendo a transparência e a integridade na gestão pública."),
+                    Proposal(number: "5.",text: "Transporte Público Eficiente: Expansão da rede de transporte público e incentivos para a utilização de meios de transporte menos poluentes."),
 
-                    Proposal(number: "6.",text: "Defesa da Soberania Nacional: Proteção dos interesses de Portugal perante organizações internacionais e fortalecimento das relações bilaterais com outros países."),
+                    Proposal(number: "6.",text: "Justiça Social: Implementação de políticas de combate à pobreza e exclusão social, garantindo igualdade de oportunidades para todos."),
 
-                    Proposal(number: "7.",text: "Valorização da Cultura Portuguesa: Promoção e preservação da identidade cultural nacional, incentivando o conhecimento e o orgulho da história e das tradições portuguesas."),
+                    Proposal(number: "7.",text: "Saúde Preventiva: Promoção de hábitos saudáveis e acesso facilitado a serviços de saúde preventiva."),
 
-                    Proposal(number: "8.",text: "Reforma do Sistema de Saúde: Melhoria da qualidade e do acesso aos serviços de saúde, com investimento em infraestrutura e valorização dos profissionais de saúde."),
+                    Proposal(number: "8.",text: "Transparência na Política: Medidas para aumentar a transparência e a responsabilidade na gestão pública."),
 
-                    Proposal(number: "9.",text: "Estímulo à Economia Nacional: Incentivo ao empreendedorismo, redução de impostos para empresas e medidas de proteção da indústria nacional."),
+                    Proposal(number: "9.",text: "Direitos LGBT+: Defesa dos direitos e igualdade de tratamento para pessoas LGBT+."),
 
-                    Proposal(number: "10.",text: "Educação de Qualidade: Modernização do sistema educativo, com ênfase no mérito e na excelência acadêmica, além de valorização dos professores e revisão dos currículos escolares."),
+                    Proposal(number: "10.",text: "Democracia Participativa: Incentivo à participação cidadã e à consulta pública em decisões políticas importantes."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://partidochega.pt/');
+                        _launchURL('https://www.pan.com.pt/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',

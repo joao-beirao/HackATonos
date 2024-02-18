@@ -6,10 +6,10 @@ import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../PoliticalPartiesPage.dart';
-const Color MAIN_COLOR = Color.fromARGB(255,33,35,84);
+const Color MAIN_COLOR = Color.fromARGB(255,240,135,17);
 
-class CH extends StatelessWidget {
-  const CH({super .key});
+class PSD extends StatelessWidget {
+  const PSD({super .key});
 
 @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CH extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: MAIN_COLOR,
-        title: Center(child: Text('Chega', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white))),
+        title: Center(child: Text('Partido Social Democrata', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
         actions: <Widget>[
 
         ],
@@ -132,8 +132,8 @@ class CH extends StatelessWidget {
           Container(
             height: 450,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage('https://pbs.twimg.com/profile_banners/1070088307894349825/1701104163/1080x360'), // Path to your banner image
+              image: DecorationImage(     //  ### BANNER ###
+                image: NetworkImage('https://pbs.twimg.com/profile_banners/20560841/1705868233/1080x360'), // Path to your banner image
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +149,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'Chega',
+                          'Partido Social Democrata',
                           style: TextStyle(fontSize: 40),
                         ),),
                       ),
@@ -157,7 +157,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                         width: 800,
                         child:Center(child:Text(
-                          'CH',
+                          'PSD',
                           style: TextStyle(fontSize: 30, color: MAIN_COLOR),
                         ),),
                       ),
@@ -168,7 +168,7 @@ class CH extends StatelessWidget {
                     Center(child: Container(
                       width: 800,
                       child:Text(
-                      'O partido político português Chega foi fundado em 2019, apresentando-se como uma alternativa de direita no cenário político do país. Sua plataforma é caracterizada por uma postura nacionalista, conservadora e anti-sistema, com ênfase em questões como segurança, imigração e identidade cultural. Liderado por André Ventura, o partido tem suscitado controvérsias devido a posicionamentos considerados polêmicos e radicais por alguns setores da sociedade portuguesa.',
+                      'O Partido Social Democrata (PSD) é um dos principais partidos políticos de Portugal, fundado em 1974 após a Revolução dos Cravos. Posiciona-se no centro-direita do espectro político, defendendo princípios sociais-democratas e políticas econômicas de mercado com uma forte intervenção estatal. Historicamente, o PSD tem alternado no poder com o Partido Socialista (PS), sendo um dos partidos mais influentes na política portuguesa. Seu programa inclui a promoção do desenvolvimento econômico, o reforço do Estado de bem-estar social, a defesa dos valores tradicionais e o compromisso com a União Europeia. Liderado por uma direção nacional eleita democraticamente, o PSD tem desempenhado um papel significativo na governança e na formulação de políticas do país.',
                       style: TextStyle(fontSize: 16),
                     ),),),
                   SizedBox(height: 60),
@@ -183,32 +183,32 @@ class CH extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
 
-                    Proposal(number: "1.",text: "Fortalecimento da Segurança Pública: Aumento do efetivo policial, investimento em tecnologia e medidas mais severas contra o crime e a violência."),
+                    Proposal(number: "1.",text: "Crescimento Econômico Sustentável: Estímulo ao empreendedorismo e investimento, visando criar empregos e promover a prosperidade."),
 
-                    Proposal(number: "2.",text: "Controle Rigoroso da Imigração: Restrição da entrada de imigrantes ilegais e revisão dos critérios de concessão de visto para proteger os interesses nacionais."),
+                    Proposal(number: "2.",text: "Modernização do Sistema de Saúde: Melhoria da eficiência, infraestrutura e acesso aos cuidados de saúde para todos os cidadãos."),
 
-                    Proposal(number: "3.",text: "Promoção dos Valores Tradicionais: Apoio à família tradicional, defesa da moralidade e dos princípios cristãos na sociedade."),
+                    Proposal(number: "3.",text: "Reforma Fiscal Justa: Simplificação do sistema tributário, redução de impostos para famílias e empresas."),
 
-                    Proposal(number: "4.",text: "Redução da Burocracia e do Estado: Simplificação de processos administrativos e diminuição da intervenção estatal na economia e na vida dos cidadãos."),
+                    Proposal(number: "4.",text: "Educação de Qualidade: Investimento na formação de professores e modernização das escolas para garantir educação de excelência."),
 
-                    Proposal(number: "5.",text: "Combate à Corrupção: Implementação de medidas rigorosas contra a corrupção e a impunidade, promovendo a transparência e a integridade na gestão pública."),
+                    Proposal(number: "5.",text: "Segurança Pública Eficiente: Reforço das forças policiais e medidas de prevenção para combater a criminalidade."),
 
-                    Proposal(number: "6.",text: "Defesa da Soberania Nacional: Proteção dos interesses de Portugal perante organizações internacionais e fortalecimento das relações bilaterais com outros países."),
+                    Proposal(number: "6.",text: "Proteção do Ambiente: Implementação de políticas de conservação, reciclagem e redução da poluição."),
 
-                    Proposal(number: "7.",text: "Valorização da Cultura Portuguesa: Promoção e preservação da identidade cultural nacional, incentivando o conhecimento e o orgulho da história e das tradições portuguesas."),
+                    Proposal(number: "7.",text: "Apoio às Famílias: Incentivos fiscais para a natalidade, creches acessíveis e medidas de conciliação trabalho-família."),
 
-                    Proposal(number: "8.",text: "Reforma do Sistema de Saúde: Melhoria da qualidade e do acesso aos serviços de saúde, com investimento em infraestrutura e valorização dos profissionais de saúde."),
+                    Proposal(number: "8.",text: "Descentralização Administrativa: Fortalecimento dos municípios e das regiões para uma governança mais próxima dos cidadãos."),
 
-                    Proposal(number: "9.",text: "Estímulo à Economia Nacional: Incentivo ao empreendedorismo, redução de impostos para empresas e medidas de proteção da indústria nacional."),
+                    Proposal(number: "9.",text: "Promoção da Inovação Tecnológica: Incentivo à pesquisa e desenvolvimento, com foco em tecnologias emergentes."),
 
-                    Proposal(number: "10.",text: "Educação de Qualidade: Modernização do sistema educativo, com ênfase no mérito e na excelência acadêmica, além de valorização dos professores e revisão dos currículos escolares."),
+                    Proposal(number: "10.",text: "Defesa dos Valores Tradicionais: Proteção da cultura, identidade nacional e valores morais na sociedade portuguesa."),
 
 
 
                     GestureDetector(
                       onTap: () {
                         // INSERIR LINK UP
-                        _launchURL('https://partidochega.pt/');
+                        _launchURL('https://www.psd.pt/');
                       },
                       child: const Center(child:Text(
                           'Saber Mais',
