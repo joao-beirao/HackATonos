@@ -176,6 +176,8 @@ class ForumPage extends StatelessWidget {
                                     // Handle login success if needed
                                     isLoggedIn = true;
                                     Navigator.pop(context);
+                                    Navigator.pushReplacement(context, 
+                                    MaterialPageRoute(builder: (_) => ForumPage()));
                                   },
                                 ),
                               ),
