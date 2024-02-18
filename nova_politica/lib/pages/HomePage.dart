@@ -10,6 +10,7 @@ import 'ContactPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'GuidePage.dart';
 import 'PoliticalPartiesPage.dart';
+import 'globals.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -22,7 +23,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  bool isLoggedIn = false; // Initially not logged in
+// Initially not logged in
 
   void updateLoginStatus() {
     setState(() {
