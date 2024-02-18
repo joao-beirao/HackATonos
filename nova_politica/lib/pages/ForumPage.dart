@@ -4,9 +4,9 @@ import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
 import 'package:nova_politica/pages/PoliticalPartiesPage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
-import 'package:nova_politica/pages/globals.dart';
-import 'PostPage.dart';
+import 'package:nova_politica/pages/registration.dart';
 import 'globals.dart';
+import 'login.dart'; // Importing the globals.dart file
 
 // Define a Post model to represent each post
 class Post {
@@ -44,8 +44,11 @@ class ForumPage extends StatelessWidget {
         toolbarHeight: 100,
         backgroundColor: Color.fromARGB(255, 177, 166, 255),
         title: Center(
-            child: Text('Forum',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+          child: Text(
+            'Forum',
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
       drawer: Drawer(
         child: SingleChildScrollView(
@@ -151,13 +154,57 @@ class ForumPage extends StatelessWidget {
           color: Colors.white,
           width: 800,
           child: StreamBuilder<QuerySnapshot>(
-            stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+            stream:
+                FirebaseFirestore.instance.collection('posts').snapshots(),
             builder: (context, snapshot) {
+              if (!isLoggedIn) {
+                // If user is not logged in, show dialog
+                return Scaffold(
+                  body: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('You need to log in to access the forum.'),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => LoginScreen(
+                                  onLoginSuccess: () {
+                                    // Handle login success if needed
+                                    isLoggedIn = true;
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text('Log In'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => RegistrationScreen(),
+                              ),
+                            );
+                          },
+                          child: Text('Register'),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              }
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: CircularProgressIndicator());
               } else if (snapshot.hasError) {
                 return Center(child: Text('Error: ${snapshot.error}'));
-              } else if (snapshot.data == null || snapshot.data!.docs.isEmpty) {
+              } else if (snapshot.data == null ||
+                  snapshot.data!.docs.isEmpty) {
                 return Center(child: Text('No posts yet!'));
               } else {
                 List<Post> posts = snapshot.data!.docs.map((doc) {
@@ -222,8 +269,11 @@ class PostDetailsPage extends StatelessWidget {
         toolbarHeight: 100,
         backgroundColor: Color.fromARGB(255, 177, 166, 255),
         title: Center(
-            child: Text('Forum',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+          child: Text(
+            'Forum',
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
       body: Center(
         child: Container(
@@ -258,8 +308,8 @@ class PostDetailsPage extends StatelessWidget {
                           snapshot.data!.docs.map((doc) {
                         return Column(children: [
                           ListTile(
-                          title: Text(doc['username']),
-                          subtitle: Text(doc['content']),
+                            title: Text(doc['username']),
+                            subtitle: Text(doc['content']),
                           ),
                           Divider(), // Add a separator here
                         ]);
@@ -326,8 +376,11 @@ class CreatePostPage extends StatelessWidget {
         toolbarHeight: 100,
         backgroundColor: Color.fromARGB(255, 177, 166, 255),
         title: Center(
-            child: Text('Forum',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+          child: Text(
+            'Forum',
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
       body: Center(
         child: Container(
