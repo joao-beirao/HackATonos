@@ -254,10 +254,13 @@ class PostDetailsPage extends StatelessWidget {
                     } else {
                       List<Widget> replyWidgets =
                           snapshot.data!.docs.map((doc) {
-                        return ListTile(
+                        return Column(children: [
+                          ListTile(
                           title: Text(doc['username']),
                           subtitle: Text(doc['content']),
-                        );
+                          ),
+                          Divider(), // Add a separator here
+                        ]);
                       }).toList();
                       return ListView(
                         children: replyWidgets,
