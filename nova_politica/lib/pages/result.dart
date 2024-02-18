@@ -54,15 +54,20 @@ class Result extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            
+            SizedBox(
+                height: 24,
+            ),
             Text(
               'O Partido do qual as suas respostas mais se aproximam é o $nearestParty',
               style: (const TextStyle(
-                  fontSize: 42,
+                  fontSize: 27,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   decoration: TextDecoration.none)),
               textAlign: TextAlign.center,
+            ),
+            SizedBox(
+                height: 24,
             ),
             TextButton(
               onPressed: () => {/*
@@ -150,17 +155,29 @@ class Result extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+                height: 24,
+            ),
             const Text(
               'Baseado neste gráfico:',
               style: (TextStyle(
-                  fontSize: 42,
+                  fontSize: 27,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   decoration: TextDecoration.none)),
               textAlign: TextAlign.center,
             ),
+            SizedBox(
+                height: 12,
+            ),
             Image.network(
-                'https://cdn.discordapp.com/attachments/1207684391283982357/1208362416929509386/qFAAQgAAEIQAACEIAABCBwmQTD3Jfz08F8VtmAAAAAElFTkSuQmCC.png?ex=65e30232&is=65d08d32&hm=16d9070231c367b6425a901e0fe69346efb045cea15c8d93d826d7b0eb24d1bd&'),
+                'https://cdn.discordapp.com/attachments/1207684391283982357/1208362416929509386/qFAAQgAAEIQAACEIAABCBwmQTD3Jfz08F8VtmAAAAAElFTkSuQmCC.png?ex=65e30232&is=65d08d32&hm=16d9070231c367b6425a901e0fe69346efb045cea15c8d93d826d7b0eb24d1bd&',
+                width: 400,
+                height: 400,
+            ),
+            SizedBox(
+                height: 12,
+            ),
             TextButton(
               onPressed: () => resetHandler(),
               style: ButtonStyle(
@@ -174,6 +191,9 @@ class Result extends StatelessWidget {
                   style: TextStyle(color: Colors.white, fontSize: 28),
                 ),
               ),
+            ),
+            SizedBox(
+                height: 24,
             ),
           ],
         ),
