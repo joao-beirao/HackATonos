@@ -81,7 +81,7 @@ class PostDetailsPage extends StatelessWidget {
                           .add({
                         'username': 'user@example.com', // Replace with actual username/email
                         'content': content,
-                        'timestamp': Timestamp.now(), // Add timestamp for sorting
+                        'timestamp': FieldValue.serverTimestamp(), // Add timestamp for sorting
                       });
                       // Clear the text field
                       _replyController.clear();
