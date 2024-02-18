@@ -4,7 +4,9 @@ import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
 import 'package:nova_politica/pages/PoliticalPartiesPage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
+import 'package:nova_politica/pages/globals.dart';
 import 'PostPage.dart';
+import 'globals.dart';
 
 // Define a Post model to represent each post
 class Post {
@@ -266,7 +268,7 @@ class PostDetailsPage extends StatelessWidget {
                           .doc(post.id)
                           .collection('replies')
                           .add({
-                        'username': 'user@example.com', // Replace with actual username/email
+                        'username': '$userEmail', // Replace with actual username/email
                         'content': content,
                       });
                       // Clear the text field

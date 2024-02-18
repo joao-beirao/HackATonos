@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'globals.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -17,6 +18,7 @@ class LoginScreen extends StatelessWidget {
       );
       // User signed in successfully, notify the callback function
       onLoginSuccess();
+      userEmail = emailController.text;
       // Navigate back to the previous screen
       Navigator.of(context).pop();
     } catch (e) {
