@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nova_politica/main.dart';
 import 'package:nova_politica/pages/PoliticalPartiesPage.dart';
+import 'package:nova_politica/pages/partidos/BlocoDeEsquerda.dart';
+import 'package:nova_politica/pages/partidos/CDSPartidoPopular.dart';
+import 'package:nova_politica/pages/partidos/Chega.dart';
+import 'package:nova_politica/pages/partidos/ColigacaoDemocraticaUnitaria.dart';
+import 'package:nova_politica/pages/partidos/IniciativaLiberal.dart';
+import 'package:nova_politica/pages/partidos/Livre.dart';
+import 'package:nova_politica/pages/partidos/PartidoSocialDemocrata.dart';
+import 'package:nova_politica/pages/partidos/PessoasAnimaisNatureza.dart';
 
 import 'GuidePage.dart';
 import 'partidos/PartidoSocialista.dart';
@@ -70,7 +78,7 @@ class Result extends StatelessWidget {
                 height: 24,
             ),
             TextButton(
-              onPressed: () => {/*
+              onPressed: () => {
                 if(nearestParty == 'CH'){
                   Navigator.push(
                       context,
@@ -83,7 +91,7 @@ class Result extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const CDS-PP()),
+                          builder: (context) => const CDS()),
                     ),
                   }
                   else if (nearestParty == 'IL')
@@ -101,8 +109,8 @@ class Result extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const PSD()),
                     ),
-                  }*/
-                  //else
+                  }
+                  else
                    if (nearestParty == 'PS')
                   {
                     Navigator.push(
@@ -110,7 +118,7 @@ class Result extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const PS()),
                     ),
-                  }/*
+                  }
                   else if (nearestParty == 'IL')
                   {
                     Navigator.push(
@@ -141,7 +149,7 @@ class Result extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const PAN()),
                     ),
-                  }*/
+                  }
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.blue),
