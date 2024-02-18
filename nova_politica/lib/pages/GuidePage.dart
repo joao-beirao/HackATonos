@@ -51,10 +51,7 @@ class MyGuide extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 24, bottom: 50),
                         child: Column(
                           children: [
-                            CircleAvatar(
-                              radius: 50,
-                              backgroundImage: NetworkImage(''),
-                            ),
+                            Icon(Icons.person,size: 80,color: Colors.white,),
                             SizedBox(
                               height: 12,
                             ),

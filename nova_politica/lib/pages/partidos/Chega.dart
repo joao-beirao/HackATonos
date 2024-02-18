@@ -4,6 +4,7 @@ import 'package:nova_politica/pages/GuidePage.dart';
 import 'package:nova_politica/pages/HomePage.dart';
 import 'package:nova_politica/pages/QuizPage.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:nova_politica/pages/globals.dart';
 
 import '../PoliticalPartiesPage.dart';
 const Color MAIN_COLOR = Color.fromARGB(255,33,35,84);
@@ -37,24 +38,15 @@ class CH extends StatelessWidget {
                       },
                       child: Container(
                         padding: const EdgeInsets.only(top: 24, bottom: 50),
-                        child: const Column(
+                        child: Column(
                           children: [
-                            CircleAvatar(
-                              radius: 50,
-                              backgroundImage: NetworkImage(''),
-                            ),
+                            Icon(Icons.person,size: 80,color: Colors.white,),
                             SizedBox(
                               height: 12,
                             ),
                             Text(
-                              'João',
-                              style:
-                                  TextStyle(fontSize: 28, color: Colors.white),
-                            ),
-                            Text(
-                              'joao@gmail.com',
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white),
+                              userEmail,
+                              style: TextStyle(fontSize: 14, color: Colors.white),
                             ),
                           ],
                         ),
