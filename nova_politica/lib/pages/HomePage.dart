@@ -256,8 +256,9 @@ class News1 extends StatelessWidget {
             child: Container( 
       height: 270,
       width: 680,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 12, 62)
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62),
+        borderRadius: BorderRadius.circular(10), // Adjust the value for roundness
       )
     ,
       child: Row(children:[
@@ -292,8 +293,11 @@ class News2 extends StatelessWidget {
       child: Container( 
       height: 270,
       width: 680,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 12, 62)
+      decoration: BoxDecoration(
+        
+        color: Color.fromARGB(255, 0, 12, 62),
+        borderRadius: BorderRadius.circular(10), // Adjust the value for roundness
+
       )
     ,
       child: Row(children:[
@@ -322,8 +326,10 @@ class News3 extends StatelessWidget {
             child: Container( 
       height: 270,
       width: 680,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 12, 62)
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 0, 12, 62),
+        borderRadius: BorderRadius.circular(10), // Adjust the value for roundness
+
       )
     ,
       child: Row(children:[
