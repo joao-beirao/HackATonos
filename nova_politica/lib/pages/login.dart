@@ -61,6 +61,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16), // Added spacing below email field
                 TextFormField(
+                  obscureText: true,
                   controller: passwordController,
                   decoration: InputDecoration(labelText: 'Password'),
                 ),
