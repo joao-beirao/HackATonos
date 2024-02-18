@@ -7,6 +7,7 @@ import 'GuidePage.dart';
 import 'PoliticalPartiesPage.dart';
 import 'result.dart';
 import 'quiz.dart';
+import 'globals.dart';
 
 class MyQuizApp extends StatefulWidget {
   const MyQuizApp({super.key});
@@ -292,7 +293,7 @@ class _MyQuizAppState extends State<MyQuizApp> {
                       },
                       child: Container(
                         padding: const EdgeInsets.only(top: 24, bottom: 50),
-                        child: const Column(
+                        child: Column(
                           children: [
                             CircleAvatar(
                               radius: 50,
@@ -302,14 +303,8 @@ class _MyQuizAppState extends State<MyQuizApp> {
                               height: 12,
                             ),
                             Text(
-                              'João',
-                              style:
-                                  TextStyle(fontSize: 28, color: Colors.white),
-                            ),
-                            Text(
-                              'joao@gmail.com',
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white),
+                              userEmail,
+                              style: TextStyle(fontSize: 14, color: Colors.white),
                             ),
                           ],
                         ),

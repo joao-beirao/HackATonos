@@ -63,7 +63,7 @@ class ForumPage extends StatelessWidget {
                   },
                   child: Container(
                     padding: const EdgeInsets.only(top: 24, bottom: 50),
-                    child: const Column(
+                    child: Column(
                       children: [
                         CircleAvatar(
                           radius: 50,
@@ -73,13 +73,9 @@ class ForumPage extends StatelessWidget {
                           height: 12,
                         ),
                         Text(
-                          'João',
-                          style: TextStyle(fontSize: 28, color: Colors.white),
-                        ),
-                        Text(
-                          'joao@gmail.com',
-                          style: TextStyle(fontSize: 14, color: Colors.white),
-                        ),
+                              userEmail,
+                              style: TextStyle(fontSize: 14, color: Colors.white),
+                            ),
                       ],
                     ),
                   ),

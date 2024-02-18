@@ -13,6 +13,7 @@ import 'package:nova_politica/pages/partidos/Livre.dart';
 import 'package:nova_politica/pages/partidos/PartidoSocialDemocrata.dart';
 import 'package:nova_politica/pages/partidos/PartidoSocialista.dart';
 import 'package:nova_politica/pages/partidos/PessoasAnimaisNatureza.dart';
+import 'globals.dart';
 
 class MyPartiesApp extends StatelessWidget {
   const MyPartiesApp({super.key});
@@ -44,7 +45,7 @@ class MyPartiesApp extends StatelessWidget {
                       },
                       child: Container(
                         padding: const EdgeInsets.only(top: 24, bottom: 50),
-                        child: const Column(
+                        child: Column(
                           children: [
                             CircleAvatar(
                               radius: 50,
@@ -54,14 +55,8 @@ class MyPartiesApp extends StatelessWidget {
                               height: 12,
                             ),
                             Text(
-                              'João',
-                              style:
-                                  TextStyle(fontSize: 28, color: Colors.white),
-                            ),
-                            Text(
-                              'joao@gmail.com',
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.white),
+                              userEmail,
+                              style: TextStyle(fontSize: 14, color: Colors.white),
                             ),
                           ],
                         ),
